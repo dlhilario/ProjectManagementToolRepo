@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -17,17 +13,13 @@ namespace ProjectManagementTool.Controllers
     public class AccountController : Controller
     {
         
-        public AccountController()
-        {
-        }
-
         public ActionResult PGMAccount()
         {
             return View();
         }
-        public AccountController(UserManager<ApplicationUser> userManager)
+        public AccountController()
         {
-            UserManager = userManager;
+          
         }
         private UserManager<ApplicationUser> _UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>());
         public UserManager<ApplicationUser> UserManager { get { return _UserManager; } set { _UserManager = value; } }

@@ -10,10 +10,10 @@ namespace ProjectManagementTool
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        //"~/Scripts/jquery-latest.js",
                         "~/Scripts/jquery-ui-{version}.js",
                         "~/Scripts/DataTables/jquery.dataTables.min.js",
-                        "~/Scripts/jquery.validate.min.js"
+                        "~/Scripts/jquery.validate.min.js",
+                        "~/Scripts/moment.js"
                         ));
 
 
@@ -25,8 +25,8 @@ namespace ProjectManagementTool
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-            //          "~/Scripts/bootstrap.js"));
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/foundation").Include(
                       "~/dist/js/foundation.min.js"
@@ -52,6 +52,11 @@ namespace ProjectManagementTool
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/themes/base/jquery.ui.css",
+                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-grid.css",
+                      "~/Content/bootstrap-reboot.css",
+                      "~/Content/font-awesome.css",
+
                       "~/Content/DataTables/css/dataTables.foundation.min.css",
                       "~/Content/DataTables/css/jquery.dataTables.min.css",
                       "~/Content/jquery.ui.layout.css",

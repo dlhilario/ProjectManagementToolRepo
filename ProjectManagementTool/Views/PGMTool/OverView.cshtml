@@ -3,18 +3,11 @@
     Layout = "~/Views/Shared/_PMGTFrameLayout.cshtml";
 }
 
-<div class="grid-y medium-grid-frame">
+<div class="container-fluid">
 
-    <div class="cell medium-auto medium-cell-block-container">
-        <div class="grid-x grid-padding-x grid-padding-x ">
+    <div id="ProjectSection" class="col-lg-12 col-sm-12">
 
-            <div id="ProjectSection" class="small-12 columns callout large-flex-child-auto border-none">
-
-                @{Html.RenderPartial("_ProjectDefaultView", Model);}
-            </div>
-        </div>
-
+        @*@{Html.RenderPartial("_ProjectDefaultView", Model);}*@
+        @{ Html.RenderPartial("_InsertUser", Model);}
     </div>
-
-
 </div>
