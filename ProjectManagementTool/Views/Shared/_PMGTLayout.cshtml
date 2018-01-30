@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Project Management Application</title>
+   
+    @Styles.Render("~/fonts/foundation/icons")
+    @Styles.Render("~/scss/foundation")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation-flex.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="off-canvas-wrapper" >
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            <div class="header">
+                <div data-sticky-container>
+                    <div class="login align-right">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+
+                    <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium" style="display:none;">
+                        <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+                        <div class="title-bar-title">Menu</div>
+                    </div>
+                    <div class="top-bar" id="responsive-menu">
+                        <div class="top-bar-title title-bar">Project Management</div>
+                        <div class="top-bar-left">
+                            <ul class="dropdown-menu menu menu-centered" data-dropdown-menu>
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            </ul>
+                        </div>
+                        <div class="top-bar-right"></div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="off-canvas-content" data-off-canvas-content> @RenderBody() </div>
+        </div>
+      
+        
+    </div>
+    <footer class="footer bottom fixed">
+        <div class="flex-container">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </div>
+
+    </footer>
+  
+   
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/foundation")
+    @Scripts.Render("~/js/piechart")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).foundation();
+        $('.top-bar').on('sticky.zf.stuckto:top', function () {
+            $(this).addClass('shrink');
+        }).on('sticky.zf.unstuckfrom:top', function () {
+            $(this).removeClass('shrink');
+        })
+    </script>
+
+</body>
+</html>

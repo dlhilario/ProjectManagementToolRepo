@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PMTWebAPI" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49892/PMTWebAPI.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49892/PMTWebAPI.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49892/PMTWebAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPMTWebAPI_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_CreateUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_CreateUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_ErrorLogger_InputMessage">
+    <wsdl:part name="parameters" element="tns:ErrorLogger" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_ErrorLogger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ErrorLoggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_ActivityLogger_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivityLogger" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_ActivityLogger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivityLoggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_AddClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddClient" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_AddClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_DeleteClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClient" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_DeleteClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_UpdateClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClient" />
+  </wsdl:message>
+  <wsdl:message name="IPMTWebAPI_UpdateClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClientResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPMTWebAPI">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMTWebAPI/Login" message="tns:IPMTWebAPI_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMTWebAPI/LoginResponse" message="tns:IPMTWebAPI_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMTWebAPI/CreateUserProfile" message="tns:IPMTWebAPI_CreateUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMTWebAPI/CreateUserProfileResponse" message="tns:IPMTWebAPI_CreateUserProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorLogger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMTWebAPI/ErrorLogger" message="tns:IPMTWebAPI_ErrorLogger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMTWebAPI/ErrorLoggerResponse" message="tns:IPMTWebAPI_ErrorLogger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivityLogger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMTWebAPI/ActivityLogger" message="tns:IPMTWebAPI_ActivityLogger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMTWebAPI/ActivityLoggerResponse" message="tns:IPMTWebAPI_ActivityLogger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMTWebAPI/DeleteUser" message="tns:IPMTWebAPI_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMTWebAPI/DeleteUserResponse" message="tns:IPMTWebAPI_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMTWebAPI/AddClient" message="tns:IPMTWebAPI_AddClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMTWebAPI/AddClientResponse" message="tns:IPMTWebAPI_AddClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMTWebAPI/DeleteClient" message="tns:IPMTWebAPI_DeleteClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMTWebAPI/DeleteClientResponse" message="tns:IPMTWebAPI_DeleteClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMTWebAPI/UpdateClient" message="tns:IPMTWebAPI_UpdateClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMTWebAPI/UpdateClientResponse" message="tns:IPMTWebAPI_UpdateClient_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPMTWebAPI" type="tns:IPMTWebAPI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IPMTWebAPI/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserProfile">
+      <soap:operation soapAction="http://tempuri.org/IPMTWebAPI/CreateUserProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorLogger">
+      <soap:operation soapAction="http://tempuri.org/IPMTWebAPI/ErrorLogger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivityLogger">
+      <soap:operation soapAction="http://tempuri.org/IPMTWebAPI/ActivityLogger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IPMTWebAPI/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddClient">
+      <soap:operation soapAction="http://tempuri.org/IPMTWebAPI/AddClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClient">
+      <soap:operation soapAction="http://tempuri.org/IPMTWebAPI/DeleteClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClient">
+      <soap:operation soapAction="http://tempuri.org/IPMTWebAPI/UpdateClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PMTWebAPI">
+    <wsdl:port name="BasicHttpBinding_IPMTWebAPI" binding="tns:BasicHttpBinding_IPMTWebAPI">
+      <soap:address location="http://localhost:49892/PMTWebAPI.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Project Management Application</title>
+
+    @Styles.Render("~/fonts/foundation/icons")
+    @Styles.Render("~/scss/foundation")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/layout")
+
+
+
+</head>
+<body onload="setBodyLayout();">
+
+    <div class="ui-layout-north">
+        <div class="cell shrink header medium-cell-block-container">
+
+            <div class="header">
+                <div data-sticky-container>
+                    <div class="login align-right">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+
+                    <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium" style="display:none;">
+                        <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+                        <div class="title-bar-title">Menu</div>
+                    </div>
+                    <div class="top-bar" id="responsive-menu">
+                        <div class="top-bar-title title-bar">Project Management</div>
+                        <div class="top-bar-left">
+                            <ul class="dropdown-menu menu menu-centered" data-dropdown-menu>
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            </ul>
+                        </div>
+                        <div class="top-bar-right"></div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ui-layout-west">
+
+        @{Html.RenderPartial("_LeftMenuTabs");}
+
+    </div>
+
+    <div class="ui-layout-center">
+
+        <div class="row">
+            @RenderBody()
+        </div>
+
+
+    </div>
+
+    <div class="ui-layout-south">
+        <div class="cell shrink footer">
+            <div class="flex-container">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/foundation")
+    @Scripts.Render("~/js/layout")
+    @Scripts.Render("~/js/piechart")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).foundation();
+        $('.top-bar').on('sticky.zf.stuckto:top', function () {
+            $(this).addClass('shrink');
+        }).on('sticky.zf.unstuckfrom:top', function () {
+            $(this).removeClass('shrink');
+        })
+
+        $(document).ready(function () {
+            setDataTable();
+        });
+
+        function setBodyLayout() {
+            var mainLayout = $('body').layout({
+                west: {
+                    fxName: "slide",
+                    spacing_closed: 16,
+                    spacing_open: 10,
+                    togglerLength_closed: 100,
+                    togglerLength_open: 100,
+                    initClosed: false,
+                    togglerContent_closed: "&#8250;",
+                    togglerContent_open: "&#8249;",
+                },
+                north: {
+                    fxName: "slide",
+                    spacing_closed: 16,
+                    spacing_open: 10,
+                    togglerLength_closed: 100,
+                    togglerLength_open: 100,
+                    initClosed: false,
+                    togglerContent_closed: "&#x032C;",
+                    togglerContent_open: "&#x032D;",
+                },
+            });
+            mainLayout.sizePane("west", 300);
+            mainLayout.addToggleBtn(".btn", "west");
+            mainLayout.addPinBtn("#myPinButton", "west");
+            mainLayout.allowOverflow("north");
+        }
+
+        function setDataTable() {
+            $(".dataTable_projet_list").DataTable();
+        }
+
+        $(document).ready(function () {
+          
+            $(document).on("click", ".actionBtn_overview", function (e) {
+                var actionValue = $(e.currentTarget).data("actionValue");
+                $.get("/PGMTool/OverView").done(function (data) {
+                    $("#ProjectSection").html(data);
+                }).fail(function (xhr, status, error) {
+                    console.log(xhr, status, error);
+                })
+            })
+            $(document).on("click", ".actionBtn_projectDetails", function (e) {
+                var actionValue = $(e.currentTarget).data("actionValue");
+                $.get("/PGMTool/Projects", { p: 1 }).done(function (data) {
+                    $("#ProjectSection").html(data);
+                }).fail(function (xhr, status, error) {
+                    console.log(xhr, status, error);
+                })
+            })
+        })
+
+
+    </script>
+
+</body>
+</html>

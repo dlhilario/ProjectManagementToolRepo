@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "scss/foundation.css",
+    "inputFile": "scss/foundation.scss"
+  },
+  {
+    "outputFile": "scss/_global.css",
+    "inputFile": "scss/_global.scss"
+  }
+]

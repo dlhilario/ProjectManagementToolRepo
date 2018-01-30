@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7c16c67e-ee92-4731-b2fd-64b266b4329a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/PMTWebAPI.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PMTWebAPI1.wsdl" MetadataType="Wsdl" ID="60dc90c7-8670-4872-9b42-037ed181544e" SourceId="1" SourceUrl="http://localhost:8080/PMTWebAPI.svc?wsdl" />
+    <MetadataFile FileName="PMTWebAPI3.xsd" MetadataType="Schema" ID="d21cc11a-1f11-4f86-8b04-1ade83ddaa12" SourceId="1" SourceUrl="http://localhost:8080/PMTWebAPI.svc?xsd=xsd1" />
+    <MetadataFile FileName="PMTWebAPI31.xsd" MetadataType="Schema" ID="7ae38e25-3705-41ae-bd36-0dc39cd63631" SourceId="1" SourceUrl="http://localhost:8080/PMTWebAPI.svc?xsd=xsd0" />
+    <MetadataFile FileName="PMTWebAPI32.xsd" MetadataType="Schema" ID="8f07b865-4827-43f9-8974-b13bda4b6a8f" SourceId="1" SourceUrl="http://localhost:8080/PMTWebAPI.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
