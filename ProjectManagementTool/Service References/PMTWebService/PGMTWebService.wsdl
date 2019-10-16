@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PGMTWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/PGMTWebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/PGMTWebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/PGMTWebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPGMTWebService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_CreateUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_CreateUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_ErrorLogger_InputMessage">
+    <wsdl:part name="parameters" element="tns:ErrorLogger" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_ErrorLogger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ErrorLoggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_ActivityLogger_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivityLogger" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_ActivityLogger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivityLoggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanies" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_CreateCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCompany" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_CreateCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_DeleteCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompany" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_DeleteCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_UpdateCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompany" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_UpdateCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjects" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProject" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_AddProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProject" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_AddProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_UpdateProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProject" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_UpdateProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_DeleteProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProject" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_DeleteProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetProjectStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetProjectStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjectStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetMaterials_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterials" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetMaterials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComments" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetOverView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOverView" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetOverView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOverViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetAttachmentById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentById" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetAttachmentById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_AddAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_AddAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPGMTWebService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/Login" message="tns:IPGMTWebService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/LoginResponse" message="tns:IPGMTWebService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetUserRole" message="tns:IPGMTWebService_GetUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetUserRoleResponse" message="tns:IPGMTWebService_GetUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetUsers" message="tns:IPGMTWebService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetUsersResponse" message="tns:IPGMTWebService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/CreateUserProfile" message="tns:IPGMTWebService_CreateUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/CreateUserProfileResponse" message="tns:IPGMTWebService_CreateUserProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ErrorLogger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/ErrorLogger" message="tns:IPGMTWebService_ErrorLogger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/ErrorLoggerResponse" message="tns:IPGMTWebService_ErrorLogger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/UpdateUser" message="tns:IPGMTWebService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/UpdateUserResponse" message="tns:IPGMTWebService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivityLogger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/ActivityLogger" message="tns:IPGMTWebService_ActivityLogger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/ActivityLoggerResponse" message="tns:IPGMTWebService_ActivityLogger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/DeleteUser" message="tns:IPGMTWebService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/DeleteUserResponse" message="tns:IPGMTWebService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetCompanies" message="tns:IPGMTWebService_GetCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetCompaniesResponse" message="tns:IPGMTWebService_GetCompanies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/CreateCompany" message="tns:IPGMTWebService_CreateCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/CreateCompanyResponse" message="tns:IPGMTWebService_CreateCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/DeleteCompany" message="tns:IPGMTWebService_DeleteCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/DeleteCompanyResponse" message="tns:IPGMTWebService_DeleteCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/UpdateCompany" message="tns:IPGMTWebService_UpdateCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/UpdateCompanyResponse" message="tns:IPGMTWebService_UpdateCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetProjects" message="tns:IPGMTWebService_GetProjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetProjectsResponse" message="tns:IPGMTWebService_GetProjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetProject" message="tns:IPGMTWebService_GetProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetProjectResponse" message="tns:IPGMTWebService_GetProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/AddProject" message="tns:IPGMTWebService_AddProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/AddProjectResponse" message="tns:IPGMTWebService_AddProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/UpdateProject" message="tns:IPGMTWebService_UpdateProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/UpdateProjectResponse" message="tns:IPGMTWebService_UpdateProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/DeleteProject" message="tns:IPGMTWebService_DeleteProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/DeleteProjectResponse" message="tns:IPGMTWebService_DeleteProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetProjectStatuses" message="tns:IPGMTWebService_GetProjectStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetProjectStatusesResponse" message="tns:IPGMTWebService_GetProjectStatuses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterials">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetMaterials" message="tns:IPGMTWebService_GetMaterials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetMaterialsResponse" message="tns:IPGMTWebService_GetMaterials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetComments" message="tns:IPGMTWebService_GetComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetCommentsResponse" message="tns:IPGMTWebService_GetComments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOverView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetOverView" message="tns:IPGMTWebService_GetOverView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetOverViewResponse" message="tns:IPGMTWebService_GetOverView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetAttachmentById" message="tns:IPGMTWebService_GetAttachmentById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetAttachmentByIdResponse" message="tns:IPGMTWebService_GetAttachmentById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetAttachments" message="tns:IPGMTWebService_GetAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetAttachmentsResponse" message="tns:IPGMTWebService_GetAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/AddAttachments" message="tns:IPGMTWebService_AddAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/AddAttachmentsResponse" message="tns:IPGMTWebService_AddAttachments_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPGMTWebService" type="tns:IPGMTWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRole">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserProfile">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/CreateUserProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorLogger">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/ErrorLogger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivityLogger">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/ActivityLogger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanies">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCompany">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/CreateCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompany">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/DeleteCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompany">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/UpdateCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjects">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProject">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProject">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/AddProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProject">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/UpdateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProject">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/DeleteProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetProjectStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterials">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetMaterials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComments">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOverView">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetOverView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentById">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetAttachmentById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachments">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachments">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/AddAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PGMTWebService">
+    <wsdl:port name="BasicHttpBinding_IPGMTWebService" binding="tns:BasicHttpBinding_IPGMTWebService">
+      <soap:address location="http://localhost:8080/PGMTWebService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

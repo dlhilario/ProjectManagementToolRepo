@@ -1,0 +1,37 @@
+﻿@model ProjectManagementTool.Models.ProjectViewModel
+@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Views/Shared/_PMGTLayout.cshtml";
+}
+
+<div class="container-fluid">
+
+    @{ Html.RenderPartial("_ManageUsers", Model);}
+
+    
+    @*<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#manage_user">Open Modal</button>*@
+    <div class="modal" id="manage_user" role="dialog" tabindex="-1" aria-labelledby="manage_user" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="manage_user">Edit User</h5>
+                    <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+                </div>
+                <div class="modal-body">
+                    @{Html.RenderPartial("_UserForm");}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="btnSaveIt" >Save</button>
+                    <button type="button" class="btn btn-default" id="btnCloseIt" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section scripts{
+
+
+}

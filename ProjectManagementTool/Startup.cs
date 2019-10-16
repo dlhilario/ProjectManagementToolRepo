@@ -8,6 +8,7 @@ namespace ProjectManagementTool
     {
         public void Configuration(IAppBuilder app)
         {
+            System.Web.Helpers.AntiForgeryConfig.UniqueClaimTypeIdentifier = System.Security.Claims.ClaimTypes.NameIdentifier;
             ConfigureAuth(app);
         }
     }

@@ -15,6 +15,307 @@ namespace ProjectManagementTool.PMTWebService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Users", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
+    [System.SerializableAttribute()]
+    public partial class Users : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreatedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastLoginField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LoggedInField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ModifiedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SaltPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProjectManagementTool.PMTWebService.UserProfile UserProfileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> UserProfileIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProjectManagementTool.PMTWebService.UserRole UserRoleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UserRoleIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Active {
+            get {
+                return this.ActiveField;
+            }
+            set {
+                if ((this.ActiveField.Equals(value) != true)) {
+                    this.ActiveField = value;
+                    this.RaisePropertyChanged("Active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDate {
+            get {
+                return this.CreatedDateField;
+            }
+            set {
+                if ((this.CreatedDateField.Equals(value) != true)) {
+                    this.CreatedDateField = value;
+                    this.RaisePropertyChanged("CreatedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastLogin {
+            get {
+                return this.LastLoginField;
+            }
+            set {
+                if ((this.LastLoginField.Equals(value) != true)) {
+                    this.LastLoginField = value;
+                    this.RaisePropertyChanged("LastLogin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool LoggedIn {
+            get {
+                return this.LoggedInField;
+            }
+            set {
+                if ((this.LoggedInField.Equals(value) != true)) {
+                    this.LoggedInField = value;
+                    this.RaisePropertyChanged("LoggedIn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ModifiedDate {
+            get {
+                return this.ModifiedDateField;
+            }
+            set {
+                if ((this.ModifiedDateField.Equals(value) != true)) {
+                    this.ModifiedDateField = value;
+                    this.RaisePropertyChanged("ModifiedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SaltPassword {
+            get {
+                return this.SaltPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SaltPasswordField, value) != true)) {
+                    this.SaltPasswordField = value;
+                    this.RaisePropertyChanged("SaltPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProjectManagementTool.PMTWebService.UserProfile UserProfile {
+            get {
+                return this.UserProfileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserProfileField, value) != true)) {
+                    this.UserProfileField = value;
+                    this.RaisePropertyChanged("UserProfile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> UserProfileID {
+            get {
+                return this.UserProfileIDField;
+            }
+            set {
+                if ((this.UserProfileIDField.Equals(value) != true)) {
+                    this.UserProfileIDField = value;
+                    this.RaisePropertyChanged("UserProfileID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProjectManagementTool.PMTWebService.UserRole UserRole {
+            get {
+                return this.UserRoleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserRoleField, value) != true)) {
+                    this.UserRoleField = value;
+                    this.RaisePropertyChanged("UserRole");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UserRoleId {
+            get {
+                return this.UserRoleIdField;
+            }
+            set {
+                if ((this.UserRoleIdField.Equals(value) != true)) {
+                    this.UserRoleIdField = value;
+                    this.RaisePropertyChanged("UserRoleId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserProfile", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
     [System.SerializableAttribute()]
     public partial class UserProfile : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -33,6 +334,9 @@ namespace ProjectManagementTool.PMTWebService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool HasMessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastLoggedInField;
@@ -57,6 +361,12 @@ namespace ProjectManagementTool.PMTWebService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ProjectManagementTool.PMTWebService.UserRole UserRoleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> UserRoleIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool hasMessage1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -116,6 +426,19 @@ namespace ProjectManagementTool.PMTWebService {
                 if ((this.HasMessageField.Equals(value) != true)) {
                     this.HasMessageField = value;
                     this.RaisePropertyChanged("HasMessage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
                 }
             }
         }
@@ -220,6 +543,32 @@ namespace ProjectManagementTool.PMTWebService {
                 if ((object.ReferenceEquals(this.UserRoleField, value) != true)) {
                     this.UserRoleField = value;
                     this.RaisePropertyChanged("UserRole");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> UserRoleId {
+            get {
+                return this.UserRoleIdField;
+            }
+            set {
+                if ((this.UserRoleIdField.Equals(value) != true)) {
+                    this.UserRoleIdField = value;
+                    this.RaisePropertyChanged("UserRoleId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="hasMessage")]
+        public bool hasMessage1 {
+            get {
+                return this.hasMessage1Field;
+            }
+            set {
+                if ((this.hasMessage1Field.Equals(value) != true)) {
+                    this.hasMessage1Field = value;
+                    this.RaisePropertyChanged("hasMessage1");
                 }
             }
         }
@@ -547,21 +896,69 @@ namespace ProjectManagementTool.PMTWebService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Clients", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Companies", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
     [System.SerializableAttribute()]
-    public partial class Clients : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Companies : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ClientNameField;
+        private string Address1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ProjectManagementTool.PMTWebService.Projects[] ProjectListField;
+        private string Address2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int UserIdField;
+        private string BusinessUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContactPhoneNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreatedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailAdressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDeletedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ModifiedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProjectManagementTool.PMTWebService.Projects[] ProjectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> StreetNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> UpdatedByUserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> UserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ZipCodeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -574,40 +971,248 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ClientName {
+        public string Address1 {
             get {
-                return this.ClientNameField;
+                return this.Address1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.ClientNameField, value) != true)) {
-                    this.ClientNameField = value;
-                    this.RaisePropertyChanged("ClientName");
+                if ((object.ReferenceEquals(this.Address1Field, value) != true)) {
+                    this.Address1Field = value;
+                    this.RaisePropertyChanged("Address1");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ProjectManagementTool.PMTWebService.Projects[] ProjectList {
+        public string Address2 {
             get {
-                return this.ProjectListField;
+                return this.Address2Field;
             }
             set {
-                if ((object.ReferenceEquals(this.ProjectListField, value) != true)) {
-                    this.ProjectListField = value;
-                    this.RaisePropertyChanged("ProjectList");
+                if ((object.ReferenceEquals(this.Address2Field, value) != true)) {
+                    this.Address2Field = value;
+                    this.RaisePropertyChanged("Address2");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int UserId {
+        public string BusinessUrl {
             get {
-                return this.UserIdField;
+                return this.BusinessUrlField;
             }
             set {
-                if ((this.UserIdField.Equals(value) != true)) {
-                    this.UserIdField = value;
-                    this.RaisePropertyChanged("UserId");
+                if ((object.ReferenceEquals(this.BusinessUrlField, value) != true)) {
+                    this.BusinessUrlField = value;
+                    this.RaisePropertyChanged("BusinessUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string City {
+            get {
+                return this.CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ContactPhoneNumber {
+            get {
+                return this.ContactPhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContactPhoneNumberField, value) != true)) {
+                    this.ContactPhoneNumberField = value;
+                    this.RaisePropertyChanged("ContactPhoneNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDate {
+            get {
+                return this.CreatedDateField;
+            }
+            set {
+                if ((this.CreatedDateField.Equals(value) != true)) {
+                    this.CreatedDateField = value;
+                    this.RaisePropertyChanged("CreatedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EmailAdress {
+            get {
+                return this.EmailAdressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailAdressField, value) != true)) {
+                    this.EmailAdressField = value;
+                    this.RaisePropertyChanged("EmailAdress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsDeleted {
+            get {
+                return this.IsDeletedField;
+            }
+            set {
+                if ((this.IsDeletedField.Equals(value) != true)) {
+                    this.IsDeletedField = value;
+                    this.RaisePropertyChanged("IsDeleted");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ModifiedDate {
+            get {
+                return this.ModifiedDateField;
+            }
+            set {
+                if ((this.ModifiedDateField.Equals(value) != true)) {
+                    this.ModifiedDateField = value;
+                    this.RaisePropertyChanged("ModifiedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PhoneNumber {
+            get {
+                return this.PhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNumberField, value) != true)) {
+                    this.PhoneNumberField = value;
+                    this.RaisePropertyChanged("PhoneNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProjectManagementTool.PMTWebService.Projects[] Projects {
+            get {
+                return this.ProjectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectsField, value) != true)) {
+                    this.ProjectsField = value;
+                    this.RaisePropertyChanged("Projects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> StreetNumber {
+            get {
+                return this.StreetNumberField;
+            }
+            set {
+                if ((this.StreetNumberField.Equals(value) != true)) {
+                    this.StreetNumberField = value;
+                    this.RaisePropertyChanged("StreetNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> UpdatedByUserID {
+            get {
+                return this.UpdatedByUserIDField;
+            }
+            set {
+                if ((this.UpdatedByUserIDField.Equals(value) != true)) {
+                    this.UpdatedByUserIDField = value;
+                    this.RaisePropertyChanged("UpdatedByUserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> UserID {
+            get {
+                return this.UserIDField;
+            }
+            set {
+                if ((this.UserIDField.Equals(value) != true)) {
+                    this.UserIDField = value;
+                    this.RaisePropertyChanged("UserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((this.ZipCodeField.Equals(value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
                 }
             }
         }
@@ -635,16 +1240,37 @@ namespace ProjectManagementTool.PMTWebService {
         private ProjectManagementTool.PMTWebService.Attachments[] AttachmentListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Client_IDField;
+        private string CityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ProjectManagementTool.PMTWebService.Comments[] CommentListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime EstimatedCompletionDateField;
+        private ProjectManagementTool.PMTWebService.Companies CompaniesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CompanyIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreatedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> EstimatedCompletionDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDeletedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProjectManagementTool.PMTWebService.MaterialList[] MaterialListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ModifiedDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProjectNameField;
@@ -653,13 +1279,28 @@ namespace ProjectManagementTool.PMTWebService {
         private string ProjectScopeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime StartDateField;
+        private System.Nullable<System.DateTime> StartDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StreetAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StreetNumberField;
+        private System.Nullable<int> StreetNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> UpdatedByUserIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ZipCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZoneField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -685,14 +1326,14 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Client_ID {
+        public string City {
             get {
-                return this.Client_IDField;
+                return this.CityField;
             }
             set {
-                if ((this.Client_IDField.Equals(value) != true)) {
-                    this.Client_IDField = value;
-                    this.RaisePropertyChanged("Client_ID");
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
                 }
             }
         }
@@ -711,7 +1352,46 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime EstimatedCompletionDate {
+        public ProjectManagementTool.PMTWebService.Companies Companies {
+            get {
+                return this.CompaniesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompaniesField, value) != true)) {
+                    this.CompaniesField = value;
+                    this.RaisePropertyChanged("Companies");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CompanyID {
+            get {
+                return this.CompanyIDField;
+            }
+            set {
+                if ((this.CompanyIDField.Equals(value) != true)) {
+                    this.CompanyIDField = value;
+                    this.RaisePropertyChanged("CompanyID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDate {
+            get {
+                return this.CreatedDateField;
+            }
+            set {
+                if ((this.CreatedDateField.Equals(value) != true)) {
+                    this.CreatedDateField = value;
+                    this.RaisePropertyChanged("CreatedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> EstimatedCompletionDate {
             get {
                 return this.EstimatedCompletionDateField;
             }
@@ -719,6 +1399,32 @@ namespace ProjectManagementTool.PMTWebService {
                 if ((this.EstimatedCompletionDateField.Equals(value) != true)) {
                     this.EstimatedCompletionDateField = value;
                     this.RaisePropertyChanged("EstimatedCompletionDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsDeleted {
+            get {
+                return this.IsDeletedField;
+            }
+            set {
+                if ((this.IsDeletedField.Equals(value) != true)) {
+                    this.IsDeletedField = value;
+                    this.RaisePropertyChanged("IsDeleted");
                 }
             }
         }
@@ -732,6 +1438,32 @@ namespace ProjectManagementTool.PMTWebService {
                 if ((object.ReferenceEquals(this.LotField, value) != true)) {
                     this.LotField = value;
                     this.RaisePropertyChanged("Lot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProjectManagementTool.PMTWebService.MaterialList[] MaterialList {
+            get {
+                return this.MaterialListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialListField, value) != true)) {
+                    this.MaterialListField = value;
+                    this.RaisePropertyChanged("MaterialList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ModifiedDate {
+            get {
+                return this.ModifiedDateField;
+            }
+            set {
+                if ((this.ModifiedDateField.Equals(value) != true)) {
+                    this.ModifiedDateField = value;
+                    this.RaisePropertyChanged("ModifiedDate");
                 }
             }
         }
@@ -763,7 +1495,7 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime StartDate {
+        public System.Nullable<System.DateTime> StartDate {
             get {
                 return this.StartDateField;
             }
@@ -771,6 +1503,32 @@ namespace ProjectManagementTool.PMTWebService {
                 if ((this.StartDateField.Equals(value) != true)) {
                     this.StartDateField = value;
                     this.RaisePropertyChanged("StartDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
                 }
             }
         }
@@ -789,14 +1547,53 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StreetNumber {
+        public System.Nullable<int> StreetNumber {
             get {
                 return this.StreetNumberField;
             }
             set {
-                if ((object.ReferenceEquals(this.StreetNumberField, value) != true)) {
+                if ((this.StreetNumberField.Equals(value) != true)) {
                     this.StreetNumberField = value;
                     this.RaisePropertyChanged("StreetNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> UpdatedByUserID {
+            get {
+                return this.UpdatedByUserIDField;
+            }
+            set {
+                if ((this.UpdatedByUserIDField.Equals(value) != true)) {
+                    this.UpdatedByUserIDField = value;
+                    this.RaisePropertyChanged("UpdatedByUserID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((this.ZipCodeField.Equals(value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Zone {
+            get {
+                return this.ZoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZoneField, value) != true)) {
+                    this.ZoneField = value;
+                    this.RaisePropertyChanged("Zone");
                 }
             }
         }
@@ -824,13 +1621,28 @@ namespace ProjectManagementTool.PMTWebService {
         private System.DateTime CreatedDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExtentionField;
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] DocumentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FileNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FileSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FileTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProjectIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProjectManagementTool.PMTWebService.Projects ProjectsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -856,14 +1668,27 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Extention {
+        public string Description {
             get {
-                return this.ExtentionField;
+                return this.DescriptionField;
             }
             set {
-                if ((object.ReferenceEquals(this.ExtentionField, value) != true)) {
-                    this.ExtentionField = value;
-                    this.RaisePropertyChanged("Extention");
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Document {
+            get {
+                return this.DocumentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DocumentField, value) != true)) {
+                    this.DocumentField = value;
+                    this.RaisePropertyChanged("Document");
                 }
             }
         }
@@ -882,6 +1707,19 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FileSize {
+            get {
+                return this.FileSizeField;
+            }
+            set {
+                if ((this.FileSizeField.Equals(value) != true)) {
+                    this.FileSizeField = value;
+                    this.RaisePropertyChanged("FileSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string FileType {
             get {
                 return this.FileTypeField;
@@ -890,6 +1728,45 @@ namespace ProjectManagementTool.PMTWebService {
                 if ((object.ReferenceEquals(this.FileTypeField, value) != true)) {
                     this.FileTypeField = value;
                     this.RaisePropertyChanged("FileType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProjectID {
+            get {
+                return this.ProjectIDField;
+            }
+            set {
+                if ((this.ProjectIDField.Equals(value) != true)) {
+                    this.ProjectIDField = value;
+                    this.RaisePropertyChanged("ProjectID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProjectManagementTool.PMTWebService.Projects Projects {
+            get {
+                return this.ProjectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectsField, value) != true)) {
+                    this.ProjectsField = value;
+                    this.RaisePropertyChanged("Projects");
                 }
             }
         }
@@ -917,7 +1794,19 @@ namespace ProjectManagementTool.PMTWebService {
         private string CommentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProjectIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProjectManagementTool.PMTWebService.Projects ProjectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime Time_StampField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> UpdatedByUserIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -943,6 +1832,45 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProjectID {
+            get {
+                return this.ProjectIDField;
+            }
+            set {
+                if ((this.ProjectIDField.Equals(value) != true)) {
+                    this.ProjectIDField = value;
+                    this.RaisePropertyChanged("ProjectID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProjectManagementTool.PMTWebService.Projects Projects {
+            get {
+                return this.ProjectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectsField, value) != true)) {
+                    this.ProjectsField = value;
+                    this.RaisePropertyChanged("Projects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime Time_Stamp {
             get {
                 return this.Time_StampField;
@@ -951,6 +1879,583 @@ namespace ProjectManagementTool.PMTWebService {
                 if ((this.Time_StampField.Equals(value) != true)) {
                     this.Time_StampField = value;
                     this.RaisePropertyChanged("Time_Stamp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> UpdatedByUserID {
+            get {
+                return this.UpdatedByUserIDField;
+            }
+            set {
+                if ((this.UpdatedByUserIDField.Equals(value) != true)) {
+                    this.UpdatedByUserIDField = value;
+                    this.RaisePropertyChanged("UpdatedByUserID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MaterialList", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
+    [System.SerializableAttribute()]
+    public partial class MaterialList : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InvoiceNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ItemQuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ProjectIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ProjectManagementTool.PMTWebService.Projects ProjectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> PurchaseDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InvoiceNumber {
+            get {
+                return this.InvoiceNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceNumberField, value) != true)) {
+                    this.InvoiceNumberField = value;
+                    this.RaisePropertyChanged("InvoiceNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemDescription {
+            get {
+                return this.ItemDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemDescriptionField, value) != true)) {
+                    this.ItemDescriptionField = value;
+                    this.RaisePropertyChanged("ItemDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemName {
+            get {
+                return this.ItemNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemNameField, value) != true)) {
+                    this.ItemNameField = value;
+                    this.RaisePropertyChanged("ItemName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ItemQuantity {
+            get {
+                return this.ItemQuantityField;
+            }
+            set {
+                if ((this.ItemQuantityField.Equals(value) != true)) {
+                    this.ItemQuantityField = value;
+                    this.RaisePropertyChanged("ItemQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProjectID {
+            get {
+                return this.ProjectIDField;
+            }
+            set {
+                if ((this.ProjectIDField.Equals(value) != true)) {
+                    this.ProjectIDField = value;
+                    this.RaisePropertyChanged("ProjectID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ProjectManagementTool.PMTWebService.Projects Projects {
+            get {
+                return this.ProjectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectsField, value) != true)) {
+                    this.ProjectsField = value;
+                    this.RaisePropertyChanged("Projects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> PurchaseDate {
+            get {
+                return this.PurchaseDateField;
+            }
+            set {
+                if ((this.PurchaseDateField.Equals(value) != true)) {
+                    this.PurchaseDateField = value;
+                    this.RaisePropertyChanged("PurchaseDate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponse", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProjectManagementTool.PMTWebService.AttachmentResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ProjectManagementTool.PMTWebService.ProjectResponse))]
+    public partial class BaseResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorMessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool HasHerrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusMessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SuccessField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ErrorMessage {
+            get {
+                return this.ErrorMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorMessageField, value) != true)) {
+                    this.ErrorMessageField = value;
+                    this.RaisePropertyChanged("ErrorMessage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool HasHerror {
+            get {
+                return this.HasHerrorField;
+            }
+            set {
+                if ((this.HasHerrorField.Equals(value) != true)) {
+                    this.HasHerrorField = value;
+                    this.RaisePropertyChanged("HasHerror");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StatusMessage {
+            get {
+                return this.StatusMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusMessageField, value) != true)) {
+                    this.StatusMessageField = value;
+                    this.RaisePropertyChanged("StatusMessage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Success {
+            get {
+                return this.SuccessField;
+            }
+            set {
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AttachmentResponse", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
+    [System.SerializableAttribute()]
+    public partial class AttachmentResponse : ProjectManagementTool.PMTWebService.BaseResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AttachmentIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AttachmentID {
+            get {
+                return this.AttachmentIDField;
+            }
+            set {
+                if ((this.AttachmentIDField.Equals(value) != true)) {
+                    this.AttachmentIDField = value;
+                    this.RaisePropertyChanged("AttachmentID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProjectResponse", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
+    [System.SerializableAttribute()]
+    public partial class ProjectResponse : ProjectManagementTool.PMTWebService.BaseResponse {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProjectIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProjectID {
+            get {
+                return this.ProjectIDField;
+            }
+            set {
+                if ((this.ProjectIDField.Equals(value) != true)) {
+                    this.ProjectIDField = value;
+                    this.RaisePropertyChanged("ProjectID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProjectStatus", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
+    [System.SerializableAttribute()]
+    public partial class ProjectStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SelectedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Active {
+            get {
+                return this.ActiveField;
+            }
+            set {
+                if ((this.ActiveField.Equals(value) != true)) {
+                    this.ActiveField = value;
+                    this.RaisePropertyChanged("Active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Selected {
+            get {
+                return this.SelectedField;
+            }
+            set {
+                if ((this.SelectedField.Equals(value) != true)) {
+                    this.SelectedField = value;
+                    this.RaisePropertyChanged("Selected");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text {
+            get {
+                return this.TextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OverviewDetails", Namespace="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model")]
+    [System.SerializableAttribute()]
+    public partial class OverviewDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalCanceledField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalCompletedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalDeletedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalOnHoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalOpenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalPendingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalProjectsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalCanceled {
+            get {
+                return this.TotalCanceledField;
+            }
+            set {
+                if ((this.TotalCanceledField.Equals(value) != true)) {
+                    this.TotalCanceledField = value;
+                    this.RaisePropertyChanged("TotalCanceled");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalCompleted {
+            get {
+                return this.TotalCompletedField;
+            }
+            set {
+                if ((this.TotalCompletedField.Equals(value) != true)) {
+                    this.TotalCompletedField = value;
+                    this.RaisePropertyChanged("TotalCompleted");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalDeleted {
+            get {
+                return this.TotalDeletedField;
+            }
+            set {
+                if ((this.TotalDeletedField.Equals(value) != true)) {
+                    this.TotalDeletedField = value;
+                    this.RaisePropertyChanged("TotalDeleted");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalOnHold {
+            get {
+                return this.TotalOnHoldField;
+            }
+            set {
+                if ((this.TotalOnHoldField.Equals(value) != true)) {
+                    this.TotalOnHoldField = value;
+                    this.RaisePropertyChanged("TotalOnHold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalOpen {
+            get {
+                return this.TotalOpenField;
+            }
+            set {
+                if ((this.TotalOpenField.Equals(value) != true)) {
+                    this.TotalOpenField = value;
+                    this.RaisePropertyChanged("TotalOpen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalPending {
+            get {
+                return this.TotalPendingField;
+            }
+            set {
+                if ((this.TotalPendingField.Equals(value) != true)) {
+                    this.TotalPendingField = value;
+                    this.RaisePropertyChanged("TotalPending");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalProjects {
+            get {
+                return this.TotalProjectsField;
+            }
+            set {
+                if ((this.TotalProjectsField.Equals(value) != true)) {
+                    this.TotalProjectsField = value;
+                    this.RaisePropertyChanged("TotalProjects");
                 }
             }
         }
@@ -966,91 +2471,203 @@ namespace ProjectManagementTool.PMTWebService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMTWebService.IPMTWebAPI")]
-    public interface IPMTWebAPI {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMTWebService.IPGMTWebService")]
+    public interface IPGMTWebService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/Login", ReplyAction="http://tempuri.org/IPMTWebAPI/LoginResponse")]
-        ProjectManagementTool.PMTWebService.UserProfile Login(string username, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/Login", ReplyAction="http://tempuri.org/IPGMTWebService/LoginResponse")]
+        ProjectManagementTool.PMTWebService.Users Login(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/Login", ReplyAction="http://tempuri.org/IPMTWebAPI/LoginResponse")]
-        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.UserProfile> LoginAsync(string username, string password);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/Login", ReplyAction="http://tempuri.org/IPGMTWebService/LoginResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Users> LoginAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/CreateUserProfile", ReplyAction="http://tempuri.org/IPMTWebAPI/CreateUserProfileResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetUserRole", ReplyAction="http://tempuri.org/IPGMTWebService/GetUserRoleResponse")]
+        ProjectManagementTool.PMTWebService.UserRole GetUserRole(int roleID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetUserRole", ReplyAction="http://tempuri.org/IPGMTWebService/GetUserRoleResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.UserRole> GetUserRoleAsync(int roleID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetUsers", ReplyAction="http://tempuri.org/IPGMTWebService/GetUsersResponse")]
+        ProjectManagementTool.PMTWebService.Users[] GetUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetUsers", ReplyAction="http://tempuri.org/IPGMTWebService/GetUsersResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Users[]> GetUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/CreateUserProfile", ReplyAction="http://tempuri.org/IPGMTWebService/CreateUserProfileResponse")]
         ProjectManagementTool.PMTWebService.UserProfile CreateUserProfile(string UserName, string Password, string Email, string FirstName, string LastName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/CreateUserProfile", ReplyAction="http://tempuri.org/IPMTWebAPI/CreateUserProfileResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/CreateUserProfile", ReplyAction="http://tempuri.org/IPGMTWebService/CreateUserProfileResponse")]
         System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.UserProfile> CreateUserProfileAsync(string UserName, string Password, string Email, string FirstName, string LastName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/ErrorLogger", ReplyAction="http://tempuri.org/IPMTWebAPI/ErrorLoggerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/ErrorLogger", ReplyAction="http://tempuri.org/IPGMTWebService/ErrorLoggerResponse")]
         void ErrorLogger(ProjectManagementTool.PMTWebService.ErrorLog errorlog);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/ErrorLogger", ReplyAction="http://tempuri.org/IPMTWebAPI/ErrorLoggerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/ErrorLogger", ReplyAction="http://tempuri.org/IPGMTWebService/ErrorLoggerResponse")]
         System.Threading.Tasks.Task ErrorLoggerAsync(ProjectManagementTool.PMTWebService.ErrorLog errorlog);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/ActivityLogger", ReplyAction="http://tempuri.org/IPMTWebAPI/ActivityLoggerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/UpdateUser", ReplyAction="http://tempuri.org/IPGMTWebService/UpdateUserResponse")]
+        bool UpdateUser(ProjectManagementTool.PMTWebService.Users user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/UpdateUser", ReplyAction="http://tempuri.org/IPGMTWebService/UpdateUserResponse")]
+        System.Threading.Tasks.Task<bool> UpdateUserAsync(ProjectManagementTool.PMTWebService.Users user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/ActivityLogger", ReplyAction="http://tempuri.org/IPGMTWebService/ActivityLoggerResponse")]
         void ActivityLogger(ProjectManagementTool.PMTWebService.ActivityLog activiyLog);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/ActivityLogger", ReplyAction="http://tempuri.org/IPMTWebAPI/ActivityLoggerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/ActivityLogger", ReplyAction="http://tempuri.org/IPGMTWebService/ActivityLoggerResponse")]
         System.Threading.Tasks.Task ActivityLoggerAsync(ProjectManagementTool.PMTWebService.ActivityLog activiyLog);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/DeleteUser", ReplyAction="http://tempuri.org/IPMTWebAPI/DeleteUserResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/DeleteUser", ReplyAction="http://tempuri.org/IPGMTWebService/DeleteUserResponse")]
         bool DeleteUser(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/DeleteUser", ReplyAction="http://tempuri.org/IPMTWebAPI/DeleteUserResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/DeleteUser", ReplyAction="http://tempuri.org/IPGMTWebService/DeleteUserResponse")]
         System.Threading.Tasks.Task<bool> DeleteUserAsync(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/AddClient", ReplyAction="http://tempuri.org/IPMTWebAPI/AddClientResponse")]
-        string AddClient(int userId, string clientName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetCompanies", ReplyAction="http://tempuri.org/IPGMTWebService/GetCompaniesResponse")]
+        ProjectManagementTool.PMTWebService.Companies[] GetCompanies(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/AddClient", ReplyAction="http://tempuri.org/IPMTWebAPI/AddClientResponse")]
-        System.Threading.Tasks.Task<string> AddClientAsync(int userId, string clientName);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetCompanies", ReplyAction="http://tempuri.org/IPGMTWebService/GetCompaniesResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Companies[]> GetCompaniesAsync(int userId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/DeleteClient", ReplyAction="http://tempuri.org/IPMTWebAPI/DeleteClientResponse")]
-        string DeleteClient(int clientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/CreateCompany", ReplyAction="http://tempuri.org/IPGMTWebService/CreateCompanyResponse")]
+        bool CreateCompany(int userId, ProjectManagementTool.PMTWebService.Companies company);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/DeleteClient", ReplyAction="http://tempuri.org/IPMTWebAPI/DeleteClientResponse")]
-        System.Threading.Tasks.Task<string> DeleteClientAsync(int clientId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/CreateCompany", ReplyAction="http://tempuri.org/IPGMTWebService/CreateCompanyResponse")]
+        System.Threading.Tasks.Task<bool> CreateCompanyAsync(int userId, ProjectManagementTool.PMTWebService.Companies company);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/UpdateClient", ReplyAction="http://tempuri.org/IPMTWebAPI/UpdateClientResponse")]
-        bool UpdateClient(int clientId, ProjectManagementTool.PMTWebService.Clients client);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/DeleteCompany", ReplyAction="http://tempuri.org/IPGMTWebService/DeleteCompanyResponse")]
+        bool DeleteCompany(int CompanyId, int UserID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMTWebAPI/UpdateClient", ReplyAction="http://tempuri.org/IPMTWebAPI/UpdateClientResponse")]
-        System.Threading.Tasks.Task<bool> UpdateClientAsync(int clientId, ProjectManagementTool.PMTWebService.Clients client);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/DeleteCompany", ReplyAction="http://tempuri.org/IPGMTWebService/DeleteCompanyResponse")]
+        System.Threading.Tasks.Task<bool> DeleteCompanyAsync(int CompanyId, int UserID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/UpdateCompany", ReplyAction="http://tempuri.org/IPGMTWebService/UpdateCompanyResponse")]
+        bool UpdateCompany(int userId, ProjectManagementTool.PMTWebService.Companies company);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/UpdateCompany", ReplyAction="http://tempuri.org/IPGMTWebService/UpdateCompanyResponse")]
+        System.Threading.Tasks.Task<bool> UpdateCompanyAsync(int userId, ProjectManagementTool.PMTWebService.Companies company);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetProjects", ReplyAction="http://tempuri.org/IPGMTWebService/GetProjectsResponse")]
+        ProjectManagementTool.PMTWebService.Projects[] GetProjects(int CompanyID, int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetProjects", ReplyAction="http://tempuri.org/IPGMTWebService/GetProjectsResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Projects[]> GetProjectsAsync(int CompanyID, int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetProject", ReplyAction="http://tempuri.org/IPGMTWebService/GetProjectResponse")]
+        ProjectManagementTool.PMTWebService.Projects GetProject(int ProjectId, int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetProject", ReplyAction="http://tempuri.org/IPGMTWebService/GetProjectResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Projects> GetProjectAsync(int ProjectId, int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/AddProject", ReplyAction="http://tempuri.org/IPGMTWebService/AddProjectResponse")]
+        ProjectManagementTool.PMTWebService.ProjectResponse AddProject(int userId, ProjectManagementTool.PMTWebService.Projects project);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/AddProject", ReplyAction="http://tempuri.org/IPGMTWebService/AddProjectResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.ProjectResponse> AddProjectAsync(int userId, ProjectManagementTool.PMTWebService.Projects project);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/UpdateProject", ReplyAction="http://tempuri.org/IPGMTWebService/UpdateProjectResponse")]
+        string UpdateProject(int userID, ProjectManagementTool.PMTWebService.Projects project);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/UpdateProject", ReplyAction="http://tempuri.org/IPGMTWebService/UpdateProjectResponse")]
+        System.Threading.Tasks.Task<string> UpdateProjectAsync(int userID, ProjectManagementTool.PMTWebService.Projects project);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/DeleteProject", ReplyAction="http://tempuri.org/IPGMTWebService/DeleteProjectResponse")]
+        bool DeleteProject(int userID, int projectID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/DeleteProject", ReplyAction="http://tempuri.org/IPGMTWebService/DeleteProjectResponse")]
+        System.Threading.Tasks.Task<bool> DeleteProjectAsync(int userID, int projectID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetProjectStatuses", ReplyAction="http://tempuri.org/IPGMTWebService/GetProjectStatusesResponse")]
+        ProjectManagementTool.PMTWebService.ProjectStatus[] GetProjectStatuses();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetProjectStatuses", ReplyAction="http://tempuri.org/IPGMTWebService/GetProjectStatusesResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.ProjectStatus[]> GetProjectStatusesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetMaterials", ReplyAction="http://tempuri.org/IPGMTWebService/GetMaterialsResponse")]
+        ProjectManagementTool.PMTWebService.MaterialList[] GetMaterials(int projectId, int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetMaterials", ReplyAction="http://tempuri.org/IPGMTWebService/GetMaterialsResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.MaterialList[]> GetMaterialsAsync(int projectId, int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetComments", ReplyAction="http://tempuri.org/IPGMTWebService/GetCommentsResponse")]
+        ProjectManagementTool.PMTWebService.Comments[] GetComments(int projectId, int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetComments", ReplyAction="http://tempuri.org/IPGMTWebService/GetCommentsResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Comments[]> GetCommentsAsync(int projectId, int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetOverView", ReplyAction="http://tempuri.org/IPGMTWebService/GetOverViewResponse")]
+        ProjectManagementTool.PMTWebService.OverviewDetails GetOverView(int CompanyId, int UserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetOverView", ReplyAction="http://tempuri.org/IPGMTWebService/GetOverViewResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.OverviewDetails> GetOverViewAsync(int CompanyId, int UserId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetAttachmentById", ReplyAction="http://tempuri.org/IPGMTWebService/GetAttachmentByIdResponse")]
+        ProjectManagementTool.PMTWebService.Attachments GetAttachmentById(int attachmentID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetAttachmentById", ReplyAction="http://tempuri.org/IPGMTWebService/GetAttachmentByIdResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Attachments> GetAttachmentByIdAsync(int attachmentID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetAttachments", ReplyAction="http://tempuri.org/IPGMTWebService/GetAttachmentsResponse")]
+        ProjectManagementTool.PMTWebService.Attachments[] GetAttachments(int ProjectId, int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetAttachments", ReplyAction="http://tempuri.org/IPGMTWebService/GetAttachmentsResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Attachments[]> GetAttachmentsAsync(int ProjectId, int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/AddAttachments", ReplyAction="http://tempuri.org/IPGMTWebService/AddAttachmentsResponse")]
+        ProjectManagementTool.PMTWebService.AttachmentResponse AddAttachments(int userId, ProjectManagementTool.PMTWebService.Attachments attachments);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/AddAttachments", ReplyAction="http://tempuri.org/IPGMTWebService/AddAttachmentsResponse")]
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.AttachmentResponse> AddAttachmentsAsync(int userId, ProjectManagementTool.PMTWebService.Attachments attachments);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPMTWebAPIChannel : ProjectManagementTool.PMTWebService.IPMTWebAPI, System.ServiceModel.IClientChannel {
+    public interface IPGMTWebServiceChannel : ProjectManagementTool.PMTWebService.IPGMTWebService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PMTWebAPIClient : System.ServiceModel.ClientBase<ProjectManagementTool.PMTWebService.IPMTWebAPI>, ProjectManagementTool.PMTWebService.IPMTWebAPI {
+    public partial class PGMTWebServiceClient : System.ServiceModel.ClientBase<ProjectManagementTool.PMTWebService.IPGMTWebService>, ProjectManagementTool.PMTWebService.IPGMTWebService {
         
-        public PMTWebAPIClient() {
+        public PGMTWebServiceClient() {
         }
         
-        public PMTWebAPIClient(string endpointConfigurationName) : 
+        public PGMTWebServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public PMTWebAPIClient(string endpointConfigurationName, string remoteAddress) : 
+        public PGMTWebServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public PMTWebAPIClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PGMTWebServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public PMTWebAPIClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PGMTWebServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public ProjectManagementTool.PMTWebService.UserProfile Login(string username, string password) {
+        public ProjectManagementTool.PMTWebService.Users Login(string username, string password) {
             return base.Channel.Login(username, password);
         }
         
-        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.UserProfile> LoginAsync(string username, string password) {
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Users> LoginAsync(string username, string password) {
             return base.Channel.LoginAsync(username, password);
+        }
+        
+        public ProjectManagementTool.PMTWebService.UserRole GetUserRole(int roleID) {
+            return base.Channel.GetUserRole(roleID);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.UserRole> GetUserRoleAsync(int roleID) {
+            return base.Channel.GetUserRoleAsync(roleID);
+        }
+        
+        public ProjectManagementTool.PMTWebService.Users[] GetUsers() {
+            return base.Channel.GetUsers();
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Users[]> GetUsersAsync() {
+            return base.Channel.GetUsersAsync();
         }
         
         public ProjectManagementTool.PMTWebService.UserProfile CreateUserProfile(string UserName, string Password, string Email, string FirstName, string LastName) {
@@ -1069,6 +2686,14 @@ namespace ProjectManagementTool.PMTWebService {
             return base.Channel.ErrorLoggerAsync(errorlog);
         }
         
+        public bool UpdateUser(ProjectManagementTool.PMTWebService.Users user) {
+            return base.Channel.UpdateUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateUserAsync(ProjectManagementTool.PMTWebService.Users user) {
+            return base.Channel.UpdateUserAsync(user);
+        }
+        
         public void ActivityLogger(ProjectManagementTool.PMTWebService.ActivityLog activiyLog) {
             base.Channel.ActivityLogger(activiyLog);
         }
@@ -1085,28 +2710,132 @@ namespace ProjectManagementTool.PMTWebService {
             return base.Channel.DeleteUserAsync(userId);
         }
         
-        public string AddClient(int userId, string clientName) {
-            return base.Channel.AddClient(userId, clientName);
+        public ProjectManagementTool.PMTWebService.Companies[] GetCompanies(int userId) {
+            return base.Channel.GetCompanies(userId);
         }
         
-        public System.Threading.Tasks.Task<string> AddClientAsync(int userId, string clientName) {
-            return base.Channel.AddClientAsync(userId, clientName);
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Companies[]> GetCompaniesAsync(int userId) {
+            return base.Channel.GetCompaniesAsync(userId);
         }
         
-        public string DeleteClient(int clientId) {
-            return base.Channel.DeleteClient(clientId);
+        public bool CreateCompany(int userId, ProjectManagementTool.PMTWebService.Companies company) {
+            return base.Channel.CreateCompany(userId, company);
         }
         
-        public System.Threading.Tasks.Task<string> DeleteClientAsync(int clientId) {
-            return base.Channel.DeleteClientAsync(clientId);
+        public System.Threading.Tasks.Task<bool> CreateCompanyAsync(int userId, ProjectManagementTool.PMTWebService.Companies company) {
+            return base.Channel.CreateCompanyAsync(userId, company);
         }
         
-        public bool UpdateClient(int clientId, ProjectManagementTool.PMTWebService.Clients client) {
-            return base.Channel.UpdateClient(clientId, client);
+        public bool DeleteCompany(int CompanyId, int UserID) {
+            return base.Channel.DeleteCompany(CompanyId, UserID);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateClientAsync(int clientId, ProjectManagementTool.PMTWebService.Clients client) {
-            return base.Channel.UpdateClientAsync(clientId, client);
+        public System.Threading.Tasks.Task<bool> DeleteCompanyAsync(int CompanyId, int UserID) {
+            return base.Channel.DeleteCompanyAsync(CompanyId, UserID);
+        }
+        
+        public bool UpdateCompany(int userId, ProjectManagementTool.PMTWebService.Companies company) {
+            return base.Channel.UpdateCompany(userId, company);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateCompanyAsync(int userId, ProjectManagementTool.PMTWebService.Companies company) {
+            return base.Channel.UpdateCompanyAsync(userId, company);
+        }
+        
+        public ProjectManagementTool.PMTWebService.Projects[] GetProjects(int CompanyID, int userID) {
+            return base.Channel.GetProjects(CompanyID, userID);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Projects[]> GetProjectsAsync(int CompanyID, int userID) {
+            return base.Channel.GetProjectsAsync(CompanyID, userID);
+        }
+        
+        public ProjectManagementTool.PMTWebService.Projects GetProject(int ProjectId, int userID) {
+            return base.Channel.GetProject(ProjectId, userID);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Projects> GetProjectAsync(int ProjectId, int userID) {
+            return base.Channel.GetProjectAsync(ProjectId, userID);
+        }
+        
+        public ProjectManagementTool.PMTWebService.ProjectResponse AddProject(int userId, ProjectManagementTool.PMTWebService.Projects project) {
+            return base.Channel.AddProject(userId, project);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.ProjectResponse> AddProjectAsync(int userId, ProjectManagementTool.PMTWebService.Projects project) {
+            return base.Channel.AddProjectAsync(userId, project);
+        }
+        
+        public string UpdateProject(int userID, ProjectManagementTool.PMTWebService.Projects project) {
+            return base.Channel.UpdateProject(userID, project);
+        }
+        
+        public System.Threading.Tasks.Task<string> UpdateProjectAsync(int userID, ProjectManagementTool.PMTWebService.Projects project) {
+            return base.Channel.UpdateProjectAsync(userID, project);
+        }
+        
+        public bool DeleteProject(int userID, int projectID) {
+            return base.Channel.DeleteProject(userID, projectID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteProjectAsync(int userID, int projectID) {
+            return base.Channel.DeleteProjectAsync(userID, projectID);
+        }
+        
+        public ProjectManagementTool.PMTWebService.ProjectStatus[] GetProjectStatuses() {
+            return base.Channel.GetProjectStatuses();
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.ProjectStatus[]> GetProjectStatusesAsync() {
+            return base.Channel.GetProjectStatusesAsync();
+        }
+        
+        public ProjectManagementTool.PMTWebService.MaterialList[] GetMaterials(int projectId, int userID) {
+            return base.Channel.GetMaterials(projectId, userID);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.MaterialList[]> GetMaterialsAsync(int projectId, int userID) {
+            return base.Channel.GetMaterialsAsync(projectId, userID);
+        }
+        
+        public ProjectManagementTool.PMTWebService.Comments[] GetComments(int projectId, int userID) {
+            return base.Channel.GetComments(projectId, userID);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Comments[]> GetCommentsAsync(int projectId, int userID) {
+            return base.Channel.GetCommentsAsync(projectId, userID);
+        }
+        
+        public ProjectManagementTool.PMTWebService.OverviewDetails GetOverView(int CompanyId, int UserId) {
+            return base.Channel.GetOverView(CompanyId, UserId);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.OverviewDetails> GetOverViewAsync(int CompanyId, int UserId) {
+            return base.Channel.GetOverViewAsync(CompanyId, UserId);
+        }
+        
+        public ProjectManagementTool.PMTWebService.Attachments GetAttachmentById(int attachmentID) {
+            return base.Channel.GetAttachmentById(attachmentID);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Attachments> GetAttachmentByIdAsync(int attachmentID) {
+            return base.Channel.GetAttachmentByIdAsync(attachmentID);
+        }
+        
+        public ProjectManagementTool.PMTWebService.Attachments[] GetAttachments(int ProjectId, int userId) {
+            return base.Channel.GetAttachments(ProjectId, userId);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.Attachments[]> GetAttachmentsAsync(int ProjectId, int userId) {
+            return base.Channel.GetAttachmentsAsync(ProjectId, userId);
+        }
+        
+        public ProjectManagementTool.PMTWebService.AttachmentResponse AddAttachments(int userId, ProjectManagementTool.PMTWebService.Attachments attachments) {
+            return base.Channel.AddAttachments(userId, attachments);
+        }
+        
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.AttachmentResponse> AddAttachmentsAsync(int userId, ProjectManagementTool.PMTWebService.Attachments attachments) {
+            return base.Channel.AddAttachmentsAsync(userId, attachments);
         }
     }
 }

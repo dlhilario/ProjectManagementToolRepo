@@ -6,5 +6,9 @@
   {
     "outputFile": "scss/_global.css",
     "inputFile": "scss/_global.scss"
+  },
+  {
+    "outputFile": "Content/Site.css",
+    "inputFile": "Content/Site.scss"
   }
 ]

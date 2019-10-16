@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7c16c67e-ee92-4731-b2fd-64b266b4329a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ac79769b-efcf-4894-8e78-b679e936cead" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/PMTWebAPI.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/PGMTWebService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PMTWebAPI1.wsdl" MetadataType="Wsdl" ID="60dc90c7-8670-4872-9b42-037ed181544e" SourceId="1" SourceUrl="http://localhost:8080/PMTWebAPI.svc?wsdl" />
-    <MetadataFile FileName="PMTWebAPI3.xsd" MetadataType="Schema" ID="d21cc11a-1f11-4f86-8b04-1ade83ddaa12" SourceId="1" SourceUrl="http://localhost:8080/PMTWebAPI.svc?xsd=xsd1" />
-    <MetadataFile FileName="PMTWebAPI31.xsd" MetadataType="Schema" ID="7ae38e25-3705-41ae-bd36-0dc39cd63631" SourceId="1" SourceUrl="http://localhost:8080/PMTWebAPI.svc?xsd=xsd0" />
-    <MetadataFile FileName="PMTWebAPI32.xsd" MetadataType="Schema" ID="8f07b865-4827-43f9-8974-b13bda4b6a8f" SourceId="1" SourceUrl="http://localhost:8080/PMTWebAPI.svc?xsd=xsd2" />
+    <MetadataFile FileName="PGMTWebService.xsd" MetadataType="Schema" ID="271044f0-3a5c-48f1-a0fd-98f798d41c51" SourceId="1" SourceUrl="http://localhost:8080/PGMTWebService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PGMTWebService.wsdl" MetadataType="Wsdl" ID="8c072a73-4532-4d02-8a15-f6c710b51624" SourceId="1" SourceUrl="http://localhost:8080/PGMTWebService.svc?wsdl" />
+    <MetadataFile FileName="PGMTWebService1.xsd" MetadataType="Schema" ID="c0ea9765-c559-473f-baa2-943ce7e9d828" SourceId="1" SourceUrl="http://localhost:8080/PGMTWebService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PGMTWebService2.xsd" MetadataType="Schema" ID="b28e3f7c-621e-4cc1-a28f-a3361198a842" SourceId="1" SourceUrl="http://localhost:8080/PGMTWebService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

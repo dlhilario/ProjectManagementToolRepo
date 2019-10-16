@@ -1,0 +1,38 @@
+﻿@model ProjectManagementTool.Models.ProjectViewModel
+
+<div class="d-table">
+    <div class="d-table-row">
+        <div class="d-table-header"></div>
+        <div class="d-table-header">ID</div>
+        <div class="d-table-header">File Name</div>
+        <div class="d-table-header">Description</div>
+        <div class="d-table-header">Created Date</div>
+        <div class="d-table-header">Remove</div>
+    </div>
+
+    <div class="d-table-body">
+        <div class="d-table-row">            
+            <div class="d-table-cell d-colspan">@Html.TextBox("file", "file", new {  @type="file", @class = "form-control", @role = "material"  }) </div>
+            <div class="d-table-cell d-colspan">@Html.EditorFor(model => model.ProjectModel.Attachment.Description, "ItemDescription", new { htmlAttributes = new { @class = "form-control", @role = "file" } }) </div>
+            <div class="d-table-cell size-12">@Ajax.ActionLink("Add New File", "Attachments", new { }, new AjaxOptions { HttpMethod = "post", InsertionMode = InsertionMode.Replace, OnBegin = "addFile", OnSuccess = "success", OnComplete = "complete", OnFailure = "fail" }, new { @href = "javascript:Void(0);", @class = "btn btn-primary" }) </div>
+        </div>
+
+        @if (Model.ProjectModel.Attachments != null)
+        {
+            foreach (var attachment in Model.ProjectModel.Attachments)
+            {
+                <div class="d-table-row">
+                    <div class="d-table-cell"><img src="/PGMTImageHandler.ashx?PictureId=@attachment.ID&thumbnail=true&thumbNailSize=120" width="120" height="120" /></div>
+                    <div class="d-table-cell">@attachment.ID </div>
+                    <div class="d-table-cell">@attachment.FileName </div>
+                    <div class="d-table-cell">@attachment.Description </div>       
+                    <div class="d-table-cell">@attachment.CreatedDate </div>
+                    <div class="d-table-cell">@Ajax.ActionLink("Remove", "RemoveFile", new { id = attachment.ID }, new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "post", OnBegin = "RemoveFile", OnSuccess = "success", OnComplete = "complete", OnFailure = "fail" }, new { @class = "btn btn-danger" }) </div>
+                </div>
+            }
+        }
+
+
+    </div>
+</div>
+

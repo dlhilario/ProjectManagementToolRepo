@@ -1,37 +1,89 @@
-﻿<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6 col-sm-6">
-            <div class="title-bar">Total Projects</div>
-            <div class="callout flex-container align-center align-middle">
-                <span class="size-48">
-                    1
-                </span>
+﻿@model ProjectManagementTool.Models.ProjectViewModel
+<section class="row">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6">
+                <div class="card ">
+                    <a class="card-header" data-toggle="collapse" aria-expanded="true" href="#collaps_total_project"> Total Projects</a>
+
+                    <div class="card-body collapse show" data-collapsed="false" id="collaps_total_project">
+                        @if (Model.OverviewDetails != null)
+                        {
+                            <div class="row  size-16">
+                                <div class="col-auto mr-auto">Total Projects</div>
+                                <div class="col-auto">
+                                    =   @Model.OverviewDetails.TotalProjects
+                                </div>
+                            </div>
+                            <div class="row size-16">
+                                <div class="col-auto mr-auto">Total Open</div>
+                                <div class="col-auto">
+                                    =   @Model.OverviewDetails.TotalOpen
+                                </div>
+                            </div>
+                            <div class="row size-16">
+                                <div class="col-auto mr-auto">Total Completed</div>
+                                <div class="col-auto">
+                                    =   @Model.OverviewDetails.TotalCompleted
+                                </div>
+                            </div>
+                            <div class="row size-16">
+                                <div class="col-auto mr-auto">Total Deleted</div>
+                                <div class="col-auto">
+                                    =   @Model.OverviewDetails.TotalDeleted
+                                </div>
+                            </div>
+                            <div class="row size-16">
+                                <div class="col-auto mr-auto">Total On Hold</div>
+                                <div class="col-auto">
+                                    =   @Model.OverviewDetails.TotalOnHold
+                                </div>
+                            </div>
+                            <div class="row size-16">
+                                <div class="col-auto mr-auto">Total Canceled</div>
+                                <div class="col-auto">
+                                    =   @Model.OverviewDetails.TotalCanceled
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="col-lg-6 col-sm-6">
-            <div class="title-bar">Total Clients</div>
-            <div class="callout flex-container align-center align-middle">
-                <span class="size-48">14</span>
+            <div class="col-lg-6 col-sm-6">
+                <div class="card">
+                    <a class="card-header" data-toggle="collapse" aria-expanded="true" href="#collaps_total_client"> Total Clients</a>
+
+                    <div class="card-body  collapse show" data-collapsed="false" id="collaps_total_client">
+                        <span class="size-48">14</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="col-lg-6 col-sm-6">
-            <div class="title-bar">Chart</div>
-            <div class="callout">
-                @{ Html.RenderPartial("_PieChart");}
+            <div class="col-lg-6 col-sm-6">
+                <div class="card">
+                    <a class="card-header" data-toggle="collapse" aria-expanded="true" href="#collaps_total_chart"> Chart</a>
+
+                    <div class="card-body collapse show" data-collapsed="false" id="collaps_total_chart">
+                        @{ Html.RenderPartial("_PieChart",Model);}
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="col-lg-6 col-sm-6">
-            <div class="title-bar"></div>
-            <div class="callout">
+            <div class="col-lg-6 col-sm-6">
+                <div class="card ">
+                    <a class="card-header" data-toggle="collapse" aria-expanded="true" href="#collaps_total_other"> Test</a>
 
+                    <div class="card-body collapse show" data-collapsed="false" id="collaps_total_other">
+                        test
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    @{Html.RenderPartial("_ProjectDetailsView"); }
 
-</div>
-
-
+</section>

@@ -3,23 +3,40 @@
 
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar col-12 justify-content-end" }))
     {
         @Html.AntiForgeryToken()
+               
+            <div class="btn-group">
+                <button class="btn btn-sm btn-secondary " type="button">
+                    Hello  @User.Identity.Name !
+                </button>
+                <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    @Html.ActionLink("Manage Project", "OverView", "PGMTool",null, new { @class = "dropdown-item" })
+                    @Html.ActionLink("Change Password", "Manage", "Account",null, new { @class = "dropdown-item" })
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                </div>
+            </div>
 
-        <ul class="menu align-right size-12 ">
-            <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
     }
 }
 else
 {
-    <ul class="menu align-right size-12 arrow-right">
-        <li class="padding-2"><a href="/Account/Register" id="registerLink" class="">Register</a></li>
-        <li class="padding-2"><a href="/Account/Login" id="loginLink">Log in</a></li>
-    </ul>
+    <div class="navbar col-12 justify-content-end">
+        <ul class="nav">
+            @*<li class="padding-2"><a href="/Account/Register" id="registerLink" class="">Register</a></li>*@
+            <li class="nav-item "><a href="/Account/Login" id="loginLink"><i class="fa fa-user"></i> Log in</a></li>
+        </ul>
+    </div>
+    
 }
-
+@section scripts {
+    <script>
+        $('[data-toggle=dropdown]').dropdown()
+    </script>
+    }

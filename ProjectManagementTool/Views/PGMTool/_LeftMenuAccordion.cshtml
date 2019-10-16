@@ -1,40 +1,28 @@
-﻿
-<ul class="accordion" data-accordion data-allow-all-closed="true">
-    <li class="accordion-item" data-accordion-item>
-        <a href="#" class="accordion-title">Domingo's Custruction</a>
-        <div class="accordion-content" data-tab-content>
-            <ul class="menu vertical" data-menu>
-                <li><a href="javascript: void(0);" class="actionBtn_overview flex-child-auto" data-action-value="OverView"><i class="fi-play float-right"></i><span>Overview</span></a></li>
-                <li><a href="javascript: void(0);" class="actionBtn_projectDetails flex-child-auto" data-action-value="ProjectView"><i class="fi-play float-right"></i><span>My Projects</span></a></li>
-                <li><a href="javascript: void(0);" class="flex-child-auto"><i class="fi-play float-right"></i><span>Project 3</span></a></li>
-            </ul>
-        </div>
-    </li>
-    <li class="accordion-item" data-accordion-item>
-        <a href="#" class="accordion-title">Users</a>
-        <div class="accordion-content" data-tab-content>
-            <ul class="menu vertical" data-menu>
-                <li><a href="#" class="flex-child-auto"><i class="fi-play float-right"></i><span>Overview</span></a></li>
-                <li><a href="#" class="flex-child-auto"><i class="fi-play float-right"></i><span>My Projects</span></a></li>
-                <li><a href="#" class="flex-child-auto"><i class="fi-play float-right"></i><span>Project 3</span></a></li>
-            </ul>
-        </div>
-    </li>
-    <li class="accordion-item" data-accordion-item>
-        <a href="#" class="accordion-title">Users</a>
-        <div class="accordion-content" data-tab-content>
-            <ul class="menu vertical" data-menu>
-                <li><a href="#" class="flex-child-auto"><i class="fi-play float-right"></i><span>Overview</span></a></li>
-                <li><a href="#" class="flex-child-auto"><i class="fi-play float-right"></i><span>My Projects</span></a></li>
-                <li><a href="#" class="flex-child-auto"><i class="fi-play float-right"></i><span>Project 3</span></a></li>
-            </ul>
-        </div>
-    </li>
+﻿@model ProjectManagementTool.Models.ProjectViewModel
+<div class="accordion md-accordion" role="tablist" id="accordionEx1" aria-multiselectable="true">
+    @if (Model.Companies != null && Model.Companies.Count > 0)
+    {
+        foreach (var comp in Model.Companies)
+        {
+            <div class="card">
+                <div class="card-header" id="headingOne" role="tab">
 
-</ul>
+                    <a href="#collapseOne_@comp.ID" class="btn btn-link" data-toggle="collapse" data-parent="#accordionEx1" aria-expanded="false" aria-controls="collapseOne_@comp.ID">
+                        <h5>  <i class="fa fa-user size-21"></i>  @comp.Name  </h5>
+                    </a>
+
+                </div>
+
+                <div class="card-body collapse" id="collapseOne_@comp.ID" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx1">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><a href="/PGMTool/OverView?cmp=@comp.ID" class="nav-link"><i class="fa fa-stack-overflow size-21"></i> Overview</a></li>
+                        <li class="nav-item"><a href="/PGMTool/Details?cmp=@comp.ID" class="nav-link"><i class="fa fa-product-hunt size-21"></i> My Projects</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        }
+    }
 
 
-@section scripts{
-
-
-}
+</div>

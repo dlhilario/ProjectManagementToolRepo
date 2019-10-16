@@ -1,22 +1,23 @@
-﻿<ul class="menu" data-menu>
-    <li><a href="/PGMTool/Manage"><i class="fi-home size-24"></i></a></li>
+﻿@model ProjectManagementTool.Models.ProjectViewModel
+<ul class="menu" data-menu>
+    <li class="nav-item"><a class="nav-link" href="/PGMTool/Manage"><i class="fa fa-home size-24"></i></a></li>
 </ul>
 
-<ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge="500" data-tabs id="deeplinked-tabs">
-    <li class="tabs-title large-flex-child-auto  is-active"><a href="#panel1d" aria-selected="true">PROJECT</a></li>
-    <li class="tabs-title large-flex-child-auto "><a href="#panel2d">Tab 1</a></li>
-    <li class="tabs-title large-flex-child-auto "><a href="#panel3d">Tab 3</a></li>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item"><a href="#home" class="nav-link active" data-toggle="tab" role="tab" aria-selected="true">Companies</a></li>
+    @*<li class="nav-item "><a href="#panel2d" class="nav-link" data-toggle="tab" role="tab" aria-selected="false">Tab 1</a></li>
+    <li class="nav-item "><a href="#panel3d" class="nav-link" data-toggle="tab" role="tab" aria-selected="false">Tab 3</a></li>*@
 </ul>
 
-<div class="tabs-content" data-tabs-content="deeplinked-tabs">
-    <div class="tabs-panel is-active" id="panel1d">
-       @{Html.RenderPartial("_LeftMenuAccordion");}
+<div class="tab-content" id="sideNav">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home">
+        @{Html.RenderPartial("_LeftMenuAccordion", Model);}
     </div>
-    <div class="tabs-panel" id="panel2d">
-        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+    <div class="tab-pane fade" id="panel2d" role="tabpanel" aria-labelledby="panel2d">
+        to be determine
     </div>
-    <div class="tabs-panel" id="panel3d">
-        
+    <div class="tab-pane fade" id="panel3d" role="tabpanel" aria-labelledby="panel3d">
+        to be determine
     </div>
-   
+
 </div>

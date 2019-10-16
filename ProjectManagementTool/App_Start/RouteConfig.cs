@@ -18,6 +18,11 @@ namespace ProjectManagementTool
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "PGMTool",
+               url: "PGMTool/CreateNewProject/{cmp}", 
+               defaults: new { controller = "PGMTool", action = "CreateNewProject", cmp = UrlParameter.Optional }
+           );
         }
     }
 }

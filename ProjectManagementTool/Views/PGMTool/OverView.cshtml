@@ -1,13 +1,54 @@
-﻿@model ProjectManagementTool.Models.ViewModels.PGMToolVM
+﻿@model ProjectManagementTool.Models.ProjectViewModel
 @{
     Layout = "~/Views/Shared/_PMGTFrameLayout.cshtml";
 }
 
-<div class="container-fluid">
 
-    <div id="ProjectSection" class="col-lg-12 col-sm-12">
+<section id="" class="container-fluid" style="background-color:red; border:solid 4px blue">
+    @{Html.RenderPartial("_ProjectDefaultView", Model);}
+    @*@{ Html.RenderPartial("_InsertUser", Model);}*@
+</section>
 
-        @*@{Html.RenderPartial("_ProjectDefaultView", Model);}*@
-        @{ Html.RenderPartial("_InsertUser", Model);}
-    </div>
-</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            init();
+        })
+        function init() {
+            RegisterAjaxEvents();
+            LoadPieChart();
+        }
+
+        function RegisterAjaxEvents() {
+
+        }
+
+        function OnBeginCallBack() {
+            console.log('beging call back')
+        }
+        function OnCompleteCallBack() {
+            console.log('complete call back')
+        }
+        function OnFailureCallBack(xhr, status, error) {
+            console.log(xhr, status, error)
+        }
+
+        function LoadPieChart() {
+            var pieChartArray = [
+                ['Task', 'Project Details'],
+                ['Projects', @Model.OverviewDetails.TotalProjects],
+                ['Open', @Model.OverviewDetails.TotalOpen],
+                ['Completed', @Model.OverviewDetails.TotalCompleted],
+                ['Pending', @Model.OverviewDetails.TotalPending],
+                ['On Hold', @Model.OverviewDetails.TotalOnHold],
+                ['Deleted', @Model.OverviewDetails.TotalDeleted],
+                ['Canceled', @Model.OverviewDetails.TotalCanceled]
+        ];
+           // console.log(pieChartArray);
+            drawChart(pieChartArray);
+        }
+
+
+    </script>}

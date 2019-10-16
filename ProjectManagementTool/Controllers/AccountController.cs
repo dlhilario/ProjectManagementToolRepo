@@ -6,20 +6,23 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using ProjectManagementTool.Models;
 using ProjectManagementTool.PMTWebService;
+using System.Security.Claims;
+using System.Collections.Generic;
+using System;
 
 namespace ProjectManagementTool.Controllers
 {
     [Authenticated]
     public class AccountController : Controller
     {
-        
+
         public ActionResult PGMAccount()
         {
             return View();
         }
         public AccountController()
         {
-          
+
         }
         private UserManager<ApplicationUser> _UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>());
         public UserManager<ApplicationUser> UserManager { get { return _UserManager; } set { _UserManager = value; } }
@@ -42,22 +45,41 @@ namespace ProjectManagementTool.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (var ws = new PMTWebAPIClient())
+                using (var ws = new PGMTWebServiceClient())
                 {
-                    UserProfile userProfile = await ws.LoginAsync(model.UserName, model.Password);
+                    Users user = await ws.LoginAsync(model.UserName, model.Password);
 
-                    //ApplicationUser user = await UserManager.FindAsync(model.UserName, model.Password);
-
-                    if (userProfile != null && userProfile.Active)
+                    if (user != null && user.Active)
                     {
-                        if (userProfile.LoggedIn)
+                        if (user.LoggedIn)
                         {
-                            Session["UserProfile"] = userProfile;
+                            List<Claim> claimcollection = new List<Claim>
+                            {
+                                new Claim(ClaimTypes.Sid, user.ID.ToString()),
+                                new Claim("Active", user.Active.ToString()),
+                                new Claim("Status", user.Status.ToString()),
+                                new Claim("HasMessage", user.UserProfile.HasMessage.ToString()),
+                                new Claim("Message", user.UserProfile.Message.ToString()),
+                                new Claim(ClaimTypes.PrimarySid, user.ID.ToString()),
+                                new Claim(ClaimTypes.Email, user.Email),
+                                new Claim(ClaimTypes.Name, string.Format("{0} {1}", user.FirstName, user.LastName)),
+                                new Claim(ClaimTypes.NameIdentifier, user.UserName),
+                                new Claim(ClaimTypes.Surname, user.FirstName),
+                                new Claim(ClaimTypes.GivenName, user.LastName),
+                                new Claim(ClaimTypes.Expiration, ""),
+                                new Claim(ClaimTypes.HomePhone, ""),
+                                new Claim(ClaimTypes.IsPersistent, model.RememberMe.ToString()),
+                                new Claim(ClaimTypes.Role, user.UserRole.Role)
+                            };
+
+                            ClaimsIdentity identity = new ClaimsIdentity(claimcollection, DefaultAuthenticationTypes.ApplicationCookie);
+                                      
+                            AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = model.RememberMe, IssuedUtc = DateTime.Now, ExpiresUtc = DateTime.Now.AddHours(2) }, identity);
+
+                            TempData["UserInfo"] = user;
+                            return RedirectToAction("Manage", "PGMTool");
 
 
-                            return RedirectToAction("Manage","PGMTool");
-                            
-                            
                         }
 
 

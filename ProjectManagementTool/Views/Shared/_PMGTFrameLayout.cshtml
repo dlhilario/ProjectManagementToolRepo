@@ -2,47 +2,40 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title - Project Management Application</title>
 
-    @Styles.Render("~/fonts/foundation/icons")
-    @Styles.Render("~/scss/foundation")
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/layout")
-
+    <script src="https://www.google.com/jsapi?fake=.js" async></script>
 
 
 </head>
 <body onload="setBodyLayout();">
 
     <div class="ui-layout-north">
-        <div class="cell shrink header medium-cell-block-container">
+        <div class="container-fluid">
+            <div class="header"></div>
+            <div class="row">
 
-            <div class="header">
-                <div data-sticky-container>
-                    <div class="login align-right">
-                        @Html.Partial("_LoginPartial")
-                    </div>
-
-                    <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium" style="display:none;">
-                        <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-                        <div class="title-bar-title">Menu</div>
-                    </div>
-                    <div class="top-bar" id="responsive-menu">
-                        <div class="top-bar-title title-bar">Project Management</div>
-                        <div class="top-bar-left">
-                            <ul class="dropdown-menu menu menu-centered" data-dropdown-menu>
-                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li>@Html.ActionLink("About", "About", "Home")</li>
-                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            </ul>
-                        </div>
-                        <div class="top-bar-right"></div>
-
-                    </div>
+                <div class="col-sm-12 login">
+                    @Html.Partial("_LoginPartial")
                 </div>
 
-
+                <nav class="col-sm-12 navbar navbar-expand-lg navbar-light bg-light top-bar" id="responsive-menu">
+                    <a href="#" class="navbar-brand"><i class="comanyLogo fa fa-compass size-48"></i> <span>Project Management</span></a>
+                    <div class="col-lg-5 collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="col-lg-8 navbar-nav mr-auto">
+                            <li class="nav-item">@Html.ActionLink("Home", "Overview", "PGMTool", htmlAttributes: new { @class = "nav-link" })</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-8 col-sm-4 col-sm-12">
+                        <button class="navbar-toggler float-md-right float-sm-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa fa-navicon size-21"></i>
+                        </button>
+                    </div>
+                </nav>
 
             </div>
 
@@ -57,10 +50,7 @@
 
     <div class="ui-layout-center">
 
-        <div class="row">
-            @RenderBody()
-        </div>
-
+        @RenderBody()
 
     </div>
 
@@ -76,12 +66,15 @@
 
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/foundation")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/datatables")
     @Scripts.Render("~/js/layout")
     @Scripts.Render("~/js/piechart")
     @RenderSection("scripts", required: false)
+
+
     <script type="text/javascript">
-        $(document).foundation();
+        //$(document).foundation();
         $('.top-bar').on('sticky.zf.stuckto:top', function () {
             $(this).addClass('shrink');
         }).on('sticky.zf.unstuckfrom:top', function () {
@@ -91,34 +84,50 @@
         $(document).ready(function () {
             setDataTable();
         });
-
+        $("#btn").on('click', function () {
+            alert('test')
+        })
         function setBodyLayout() {
             var mainLayout = $('body').layout({
                 west: {
-                    fxName: "slide",
-                    spacing_closed: 16,
+                    //fxName: "slide",
+                    spacing_closed: 25,
                     spacing_open: 10,
-                    togglerLength_closed: 100,
-                    togglerLength_open: 100,
+                    togglerLength_closed: 150,
+                    togglerLength_open: 150,
                     initClosed: false,
                     togglerContent_closed: "&#8250;",
                     togglerContent_open: "&#8249;",
+                    slidable: false,
+                    resizable: true,
+                    size: 300,
                 },
                 north: {
+
                     fxName: "slide",
-                    spacing_closed: 16,
-                    spacing_open: 10,
-                    togglerLength_closed: 100,
-                    togglerLength_open: 100,
+                    north_fxName: "none",
+                    spacing_closed: 15,
+                    spacing_open: 1,
+                    togglerLength_closed: 150,
+                    togglerLength_open: 150,
                     initClosed: false,
                     togglerContent_closed: "&#x032C;",
                     togglerContent_open: "&#x032D;",
+                    slidable: false,
+                    resizable: false,
+                    closable: false,
+
                 },
+                south: {
+                    resizable: false,
+                    closable: false,
+                    spacing_open: 1,
+                }
             });
-            mainLayout.sizePane("west", 300);
-            mainLayout.addToggleBtn(".btn", "west");
-            mainLayout.addPinBtn("#myPinButton", "west");
+            //mainLayout.addToggleBtn("#btn", "north");
+            ////mainLayout.addPinBtn("#myPinButton", "west");
             mainLayout.allowOverflow("north");
+
         }
 
         function setDataTable() {
@@ -126,7 +135,7 @@
         }
 
         $(document).ready(function () {
-          
+
             $(document).on("click", ".actionBtn_overview", function (e) {
                 var actionValue = $(e.currentTarget).data("actionValue");
                 $.get("/PGMTool/OverView").done(function (data) {
@@ -144,7 +153,24 @@
                 })
             })
         })
-
+        $(".datepicker").datepicker({
+            format: 'mm/dd/yyyy',
+            startDate: '-0d',
+            clearBtn: true,
+            todayBtn: false,
+            todayHighlight: true,
+            autoclose: true,
+            orientation: 'auto'
+        });
+        $(".datepicker_material_list").datepicker({
+            format: 'mm/dd/yyyy',
+            //startDate: '-0d',
+            clearBtn: true,
+            todayBtn: false,
+            todayHighlight: true,
+            autoclose: true,
+            orientation: 'auto'
+        });
 
     </script>
 

@@ -1,52 +1,104 @@
-﻿@model ProjectManagementTool.Models.ViewModels.PGMToolVM
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-6 col-lg-12">
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label for="username">User Name</label>
-                        <input type="text" class="form-control" id="username" runat="server" value="" />
-                    </div>
-                    <div class="form-group col-md-3">
-                        <label for="lastName">Status</label>
-                        <select type="text" class="form-control" id="status" runat="server">
-                            <option value="true">Active</option>
-                            <option value="false">Inactive</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="username" runat="server" value="" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" runat="server" value="" />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="emailAddress">Email Address</label>
-                        <input type="email" class="form-control" id="emailAddress" runat="server" value="" />
-                    </div>
+﻿@model ProjectManagementTool.Models.ProjectViewModel
+<h2>Profile Edit</h2>
+<div class="row">
 
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" runat="server" value="" />
+    @using (Ajax.BeginForm("Create", "Data", new AjaxOptions()
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "insertUser",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "OnBeginCallBack()",
+        OnComplete = "return OnCompleteCallBack()",
+        OnFailure = "return OnFailureCallBack(xhr, status, error)"
+        //Confirm = "Do you want to create user profile?"
+    },new { @class="container-fluid" }))
+    {
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="UserInformation card">
+                    <div class="card-header">
+                        User Information
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" runat="server" value="" />
-                    </div>
-                </div>
-            </form>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="username">User Name</label>
+                                @Html.TextBoxFor(Model => Model.PGMToolVM.UserInfo.UserName, "", new { @id = "username", @class = "form-control" })
+                                @Html.ValidationMessageFor(Model => Model.PGMToolVM.UserInfo.UserName, string.Empty, new { @class = "error" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastName">Status</label>
+                                <select type="text" class="form-control" id="status" name="status">
+                                    <option value="true">Active</option>
+                                    <option value="false">Inactive</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="firstName">First Name</label>
+                                @Html.TextBoxFor(Model => Model.PGMToolVM.UserInfo.FirstName, "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(Model => Model.PGMToolVM.UserInfo.FirstName)
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastName">Last Name</label>
+                                @Html.TextBoxFor(Model => Model.PGMToolVM.UserInfo.LastName, "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(Model => Model.PGMToolVM.UserInfo.LastName)
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="emailAddress">Email Address</label>
+                                @*@Html.TextBoxFor(Model => Model.PGMToolVM.UserInfo.Email, "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(Model => Model.PGMToolVM.UserInfo.Email)*@
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="telephone">Telephone</label>
+                                @Html.TextBoxFor(Model => Model.PGMToolVM.UserInfo.Telephone, "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(Model => Model.PGMToolVM.UserInfo.Telephone)
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="password">Password</label>
+                                @Html.PasswordFor(Model => Model.PGMToolVM.UserInfo.password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(Model => Model.PGMToolVM.UserInfo.password)
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirmPassword">Confirm Password</label>
+                                @Html.PasswordFor(Model => Model.PGMToolVM.UserInfo.ConfirmPassword, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(Model => Model.PGMToolVM.UserInfo.ConfirmPassword)
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6 text-right">
 
+                                <input type="submit" class="btn btn-dark" value="Save User" formnovalidate="formnovalidate" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        Company Information
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-    </div>
+
+
+
+    }
+
 
 </div>
+

@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Manage";
     Layout = "~/Views/Shared/_PMGTLayout.cshtml";
-}
+    }
 
 
 <div class="grid-y medium-grid-frame" >
@@ -25,20 +25,20 @@
 
 @section scripts{
     <script type="text/javascript">
-        $('#projectList').DataTable({
-            'paging': true,
-            'ordering': true,
-            'info': true
-        });
+        //$('#TableData').DataTable({
+        //    'paging': true,
+        //    'ordering': true,
+        //    'info': true
+        //});
 
-        $(document).on("change", "#checkAll_materialList", function () {
-            if ($(this).is(":checked")) {
-                $(".cb_material_list").attr("checked", "checked");
-            } else {
-                $(".cb_material_list").removeAttr("checked");
-            }
+        //$(document).on("change", "#checkAll_materialList", function () {
+        //    if ($(this).is(":checked")) {
+        //        $(".cb_material_list").attr("checked", "checked");
+        //    } else {
+        //        $(".cb_material_list").removeAttr("checked");
+        //    }
             
-        })
+        //})
     
 
     </script>

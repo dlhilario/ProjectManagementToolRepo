@@ -1,0 +1,342 @@
+﻿@model ProjectManagementTool.Models.ProjectViewModel
+@{
+    ViewBag.Title = "CreateNewProject";
+    Layout = "~/Views/Shared/_PMGTFrameLayout.cshtml";
+}
+
+<section class="container-fluid">
+    <h2>CreateNewProject</h2>
+</section>
+
+<section class="container-fluid">
+    @using (Html.BeginForm("CreateProject", "PGMTool", new { }, FormMethod.Post, new { @class = "" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form">
+            <div class="col-12">
+                <h4>Projects</h4>
+                <hr />
+            </div>
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="card">
+                <a href="#projectDetails" data-toggle="collapse" role="button" class="card-header">Project Details</a>
+                <div class="card-body collapse show" data-collapsed="false" id="projectDetails">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            @Html.Hidden("CompanyId", Request["cmp"])
+                            @Html.LabelFor(model => model.ProjectModel.Project.ProjectName, "Project Name", htmlAttributes: new { @class = "control-label col-md-12" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ProjectModel.Project.ProjectName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ProjectModel.Project.ProjectName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.ProjectModel.Project.StartDate, "Start Date", htmlAttributes: new { @class = "control-label date col-md-12" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ProjectModel.Project.StartDate, new { htmlAttributes = new { @class = "form-control date datepicker", @data_Provider = "datepicker" } })
+                                @Html.ValidationMessageFor(model => model.ProjectModel.Project.StartDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.ProjectModel.Project.EstimatedCompletionDate, "Estimated Completion Date", htmlAttributes: new { @class = "control-label col-md-12" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ProjectModel.Project.EstimatedCompletionDate, new { htmlAttributes = new { @class = "form-control date datepicker", @data_Provider = "datepicker" } })
+                                @Html.ValidationMessageFor(model => model.ProjectModel.Project.EstimatedCompletionDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group  col-md-4">
+                            @Html.LabelFor(model => model.ProjectModel.Project.Status, htmlAttributes: new { @class = "control-label col-md-12" })
+                            <div class="col-md-10">
+                                @Html.DropDownListFor(model => model.ProjectModel.Project.Status, Model.ProjectModel.SelectListForProjectStatus(), new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ProjectModel.Project.Status, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            @Html.LabelFor(model => model.ProjectModel.Project.CompanyID, htmlAttributes: new { @class = "control-label col-md-12" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ProjectModel.Project.CompanyID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                                @Html.ValidationMessageFor(model => model.ProjectModel.Project.CompanyID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+
+                        <div class="form-group col-12">
+                            @Html.LabelFor(model => model.ProjectModel.Project.ProjectScope, "Project Scope", htmlAttributes: new { @class = "control-label col-12" })
+                            <div class="col-12">
+                                @Html.TextAreaFor(model => model.ProjectModel.Project.ProjectScope, new { @class = "form-control col-md-12" })
+                                @Html.ValidationMessageFor(model => model.ProjectModel.Project.ProjectScope, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <section id="project_tabs">
+
+                <ul class="nav nav-pills" id="v-pills-tab">
+                    <li>
+                        <a class="nav-link active" id="v-pills-comments-tab" data-toggle="pill" href="#v-pills-comments" role="tab" aria-controls="v-pills-comments" aria-selected="true">Comments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Property</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" id="v-pills-material-list-tab" data-toggle="pill" href="#v-pills-material-list" role="tab" aria-controls="v-pills-material-list" aria-selected="false">Material List</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" id="v-pills-attachments-tab" data-toggle="pill" href="#v-pills-attachments" role="tab" aria-controls="v-pills-attachments" aria-selected="false">Attachments</a>
+                    </li>
+                </ul>
+                <div class="tab-content clearfix" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-comments" role="tabpanel" aria-labelledby="v-pills-comments-tab">
+                        <div class="card">
+                            <h4 class="card-header">Comment</h4>
+                            <div class="card-body">
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <div class="col-12">
+                                            @Html.ValidationMessageFor(model => model.ProjectModel.Comments, "", new { @class = "text-danger" })
+                                            @Html.TextAreaFor(model => model.ProjectModel.Comments, new { @class = "form-control col-md-12" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-header">Comments History</h4>
+                            <div class="card-body">
+                                @Html.TextAreaFor(model => model.ProjectModel.Comments, new { @class = "form-control col-md-12", @disabled = "Disabled" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="card">
+                            <h4 class="card-header">Property Address</h4>
+                            <div class="card-body">
+                                <div class="form-row">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ProjectModel.Project.StreetNumber, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ProjectModel.Project.StreetNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ProjectModel.Project.StreetNumber, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.ProjectModel.Project.StreetAddress, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ProjectModel.Project.StreetAddress, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ProjectModel.Project.StreetAddress, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ProjectModel.Project.City, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ProjectModel.Project.City, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ProjectModel.Project.City, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ProjectModel.Project.State, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ProjectModel.Project.State, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ProjectModel.Project.State, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-row">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ProjectModel.Project.ZipCode, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ProjectModel.Project.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ProjectModel.Project.ZipCode, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ProjectModel.Project.Lot, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ProjectModel.Project.Lot, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ProjectModel.Project.Lot, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ProjectModel.Project.Zone, htmlAttributes: new { @class = "control-label col-md-12" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ProjectModel.Project.Zone, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ProjectModel.Project.Zone, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-material-list" role="tabpanel" aria-labelledby="v-pills-material-list-tab">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="card">
+                                    <h4 class="card-header">
+                                        Material List
+
+                                    </h4>
+                                    <div class="card-body material_list" id="material_list">
+
+                                        @{Html.RenderPartial("_MaterialListView", Model);}
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-attachments" role="tabpanel" aria-labelledby="v-pills-attachments-tab">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="card col-lg-12">
+                                    <h4 class="card-header">
+                                        Attachments
+                                    </h4>
+                                    <div class="card-body attachments overflow-auto" id="attachments">
+
+                                        @{Html.RenderPartial("_AttachmentstView", Model);}
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+
+                                            }
+
+</section>
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts{
+    <script type="text/javascript">
+
+
+        //$(document).ready(function () {
+        //    $(".addMaterial").on("click", addNewMaterial);
+        //})
+
+
+        function addNewMaterial(evt) {
+
+            console.log("addMaterialevent: ", evt);
+            var listId = $("#ProjectModel_Material_ID").val();
+            var listName = $("#ProjectModel_Material_ItemName").val();
+            var listDesc = $("#ProjectModel_Material_ItemDescription").val();
+            var listPrice = $("#ProjectModel_Material_Price").val();
+            var listQty = $("#ProjectModel_Material_ItemQuantity").val();
+            var listPurchaseDate = $("#ProjectModel_Material_PurchaseDate").val();
+            var listInvoice = $("#ProjectModel_Material_InvoiceNumber").val();
+
+            var materialList = { itemName: listName, itemDescription: listDesc, itemQuantity: listQty, price: listPrice, purchaseDate: listPurchaseDate, InvoiceNumber: listInvoice };
+            $(".material_list").load("MaterialList", materialList)
+            // $.post("MaterialList", materialList, success).fail(fail);
+        }
+
+        function RemoveMaterial(evt) {
+            console.log("RemoveMaterial: ", evt);
+        }
+        var fileArray;
+
+        function readFile(evt) {
+            var arrayBuffer = evt.target.result;          
+            fileArray = arrayBuffer.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+        }
+
+        function addFile(evt) {
+
+            console.log("addImage: ", evt);
+            var file = document.querySelector('input[type=file]').files[0];
+            var fileReader = new FileReader();
+            fileReader.addEventListener('load', readFile);
+            fileReader.readAsDataURL(file);
+            var Desc = $("#ProjectModel_Attachment_Description").val();
+            var createdDate = new Date();
+            setTimeout(function () {
+                var attachment = { FileName: file.name, FileSize: file.size, FileType: file.type, data: fileArray, Description: Desc };
+                $(".attachments").load("Attachments", attachment)},1000)
+           
+        }
+
+        function RemoveFile(evt) {
+            console.log("RemoveFile: ", evt);
+        }
+
+        function success(evt) {
+            $(".material_list").html(evt);
+
+        }
+
+        function complete(evt) {
+            console.log('completed')
+
+            setTimeout(function () {
+                console.log('completed 100');
+                $(".datepicker_material_list").datepicker({
+                    format: 'mm/dd/yyyy',
+                    //startDate: '-0d',
+                    clearBtn: true,
+                    todayBtn: false,
+                    todayHighlight: true,
+                    autoclose: true,
+                    orientation: 'auto'
+                });
+            }, 1000);
+        }
+
+        function fail(data, status, xhr) {
+            console.log(data, status, xhr);
+        }
+
+    </script>
+}

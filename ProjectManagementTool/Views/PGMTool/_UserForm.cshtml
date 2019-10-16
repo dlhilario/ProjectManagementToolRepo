@@ -1,69 +1,54 @@
-﻿@model ProjectManagementTool.Models.ViewModels.PGMToolVM
-@using ProjectManagementTool.Models;
-@{
-    if (RoutingPageUtils.CurrentUserInfo!=null )
-    {
-
-    }
-}
-<div class="container container-fluid">
-    @using (Html.BeginForm())
-    {
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="panel-title">User Profile</div>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-sm-4">
-                        @Html.Label("username", "User Name")
-                        @Html.TextBox("username", "", new { @class = "form-control" })
-                    </div>
-                    <div class="col-sm-4">
-                        @Html.Label("userrole", "User Role")
-                        @Html.DropDownList("userrole", new List<SelectListItem> {
+﻿
+<form id="manage_user_form">
+    <div class="row">
+        <div class="col-sm-6">
+            @Html.Label("username", "User Name")
+            @Html.TextBox("username", "", new { @class = "form-control" })
+        </div>
+        <div class="col-sm-6">
+            @Html.Label("userrole", "User Role")
+            @Html.DropDownList("userrole", new List<SelectListItem> {
                         new SelectListItem() { Text ="Administrator", Value="" },
                         new SelectListItem() { Text = "User", Value = "" }
                     }, new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        @Html.Label("firstname", "First Name")
-                        @Html.TextBox("firstname", "", new { @class = "form-control" })
-                    </div>
-                    <div class="col-sm-4">
-                        @Html.Label("lastname", "Last Name")
-                        @Html.TextBox("lastname", "", new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        @Html.Label("emailaddress", "Email")
-                        @Html.TextBox("emailaddress", "", new { @class = "form-control" })
-                    </div>
-                    <div class="col-sm-4">
-                        @Html.Label("confirmemail", "Confirm Email")
-                        @Html.TextBox("confirmemail", "", new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        @Html.Label("password", "Password")
-                        @Html.Password("password", "", new { @class = "form-control" })
-                    </div>
-                    <div class="col-sm-4">
-                        @Html.Label("confirmpassword", "Confirm Password")
-                        @Html.Password("confirmpassword", "", new { @class = "form-control" })
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="panel-footer text-right">
-                <input type="submit" class="btn btn-primary" value="Save Profile" />
-            </div>
         </div>
-    }
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            @Html.Label("firstname", "First Name")
+            @Html.TextBox("firstname", "", new { @class = "form-control" })
+        </div>
+        <div class="col-sm-6">
+            @Html.Label("lastname", "Last Name")
+            @Html.TextBox("lastname", "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            @Html.Label("emailaddress", "Email")
+            @Html.TextBox("emailaddress", "", new { @class = "form-control" })
+        </div>
+        <div class="col-sm-6">
+            @Html.Label("confirmemail", "Confirm Email")
+            @Html.TextBox("confirmemail", "", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            @Html.Label("password", "Password")
+            @Html.Password("password", "", new { @class = "form-control" })
+        </div>
+        <div class="col-sm-6">
+            @Html.Label("confirmpassword", "Confirm Password")
+            @Html.Password("confirmpassword", "", new { @class = "form-control" })
+        </div>
+    </div>
+</form>
 
-</div>
+
+
+
+
+
+
+

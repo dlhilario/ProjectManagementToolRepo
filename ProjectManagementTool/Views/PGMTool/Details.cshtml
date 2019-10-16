@@ -1,0 +1,76 @@
+﻿@model ProjectManagementTool.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "My Projects Details";
+    Layout = "~/Views/Shared/_PMGTFrameLayout.cshtml";
+}
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2>@ViewBag.Title</h2>
+
+            <p>
+                @Html.ActionLink("Create New", "CreateNewProject", new { cmp=Request["cmp"]})
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid">
+    
+    <div class="table-responsive col-xs-4 col-xs-12">
+
+        <table class="table" id="TableData">
+            <thead>
+                <tr>
+                    <th scope="col">Project Id</th>
+                    <th scope="col">Project Name</th>
+                    <th scope="col">Project Status</th>
+                    <th scope="col">Modified Date</th>
+                    <th scope="col">Started Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if (Model.ProjectModel.Projects != null && Model.ProjectModel.Projects.Count > 0)
+                    {
+                        foreach (var proj in Model.ProjectModel.Projects)
+                        {
+                    <tr>
+                        <td scope="row">
+                            @proj.ID
+                        </td>
+                        <td>
+                            <a href="?cmp=@Request["cmp"]&prj=@proj.ID"> @proj.ProjectName</a>
+                        </td>
+                        <td>
+                            @proj.Status
+                        </td>
+                        <td>
+                            @proj.ModifiedDate.ToShortDateString()
+                        </td>
+                        <td>
+                            @proj.StartDate.Value.ToShortDateString()
+                        </td>
+                    </tr>
+
+                        }
+                    }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+@section scripts{
+    <script>
+        $('#TableData').DataTable({
+            'paging': true,
+            'ordering': true,
+            'info': true
+        });
+    </script>
+}
