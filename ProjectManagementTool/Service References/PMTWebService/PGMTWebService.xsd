@@ -120,13 +120,14 @@
       <xs:element minOccurs="0" name="CommentList" nillable="true" type="tns:ArrayOfComments" />
       <xs:element minOccurs="0" name="Companies" nillable="true" type="tns:Companies" />
       <xs:element minOccurs="0" name="CompanyID" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CostEstimate" type="xs:double" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="EstimatedCompletionDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
       <xs:element minOccurs="0" name="Lot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MaterialList" nillable="true" type="tns:ArrayOfMaterialList" />
-      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ProjectName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProjectScope" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
@@ -148,13 +149,15 @@
   <xs:element name="ArrayOfAttachments" nillable="true" type="tns:ArrayOfAttachments" />
   <xs:complexType name="Attachments">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Document" nillable="true" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FileSize" type="xs:int" />
       <xs:element minOccurs="0" name="FileType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ProjectID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Projects" nillable="true" type="tns:Projects" />
     </xs:sequence>
@@ -172,7 +175,7 @@
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="ProjectID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Projects" nillable="true" type="tns:Projects" />
-      <xs:element minOccurs="0" name="Time_Stamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Time_Stamp" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="UpdatedByUserID" nillable="true" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -190,10 +193,13 @@
       <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemQuantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedDate" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Price" type="xs:double" />
       <xs:element minOccurs="0" name="ProjectID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Projects" nillable="true" type="tns:Projects" />
       <xs:element minOccurs="0" name="PurchaseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalPrice" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MaterialList" nillable="true" type="tns:MaterialList" />

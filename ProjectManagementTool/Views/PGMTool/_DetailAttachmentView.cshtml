@@ -1,0 +1,35 @@
+﻿@model ProjectManagementTool.Models.ProjectModel
+
+<table class="table ">
+    <thead>
+        <tr>
+            <th style="width:120px">File</th>
+            <th>ID</th>
+            <th>File Name</th>
+            <th style="width:50%">Description</th>
+            <th>Created Date</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model.ProjectModel.Project != null && Model.Project.AttachmentList.Length > 0)
+        {
+            foreach (var attachment in Model.Project.AttachmentList)
+            {
+                <tr>
+                    <td>
+                        <a href="/PGMTImageHandler.ashx?PictureId=@attachment.ID&thumbnail=false"  data-lightbox="attachments" data-title="@attachment.Description">
+                            <img src="/PGMTImageHandler.ashx?PictureId=@attachment.ID&thumbnail=true&thumbNailSize=120" width="120" height="120" class="rounded img-fluid" />
+                        </a>
+                    </td>
+                    <td>@attachment.ID </td>
+                    <td>@attachment.FileName </td>
+                    <td>@attachment.Description </td>
+                    <td>@attachment.CreatedDate </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

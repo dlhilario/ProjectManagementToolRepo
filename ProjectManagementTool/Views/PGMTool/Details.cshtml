@@ -1,4 +1,4 @@
-﻿@model ProjectManagementTool.Models.ProjectViewModel
+﻿@model ProjectManagementTool.Models.ProjectModel
 
 @{
     ViewBag.Title = "My Projects Details";
@@ -33,22 +33,22 @@
             </thead>
 
             <tbody>
-                @if (Model.ProjectModel.Projects != null && Model.ProjectModel.Projects.Count > 0)
+                @if (Model.Projects != null && Model.Projects.Count > 0)
                     {
-                        foreach (var proj in Model.ProjectModel.Projects)
+                        foreach (var proj in Model.Projects)
                         {
                     <tr>
                         <td scope="row">
                             @proj.ID
                         </td>
                         <td>
-                            <a href="?cmp=@Request["cmp"]&prj=@proj.ID"> @proj.ProjectName</a>
+                            <a href="ProjectDetails?cmp=@Request["cmp"]&PrjId=@proj.ID"> @proj.ProjectName</a>
                         </td>
                         <td>
                             @proj.Status
                         </td>
                         <td>
-                            @proj.ModifiedDate.ToShortDateString()
+                            @proj.ModifiedDate.Value.ToShortDateString()
                         </td>
                         <td>
                             @proj.StartDate.Value.ToShortDateString()

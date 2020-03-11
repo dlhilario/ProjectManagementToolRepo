@@ -57,7 +57,7 @@ namespace ProjectManagementTool
                 MemoryStream mem = new MemoryStream(imageBytes);
                 Image image = Image.FromStream(mem);
 
-                if (bool.TryParse(context.Request["thumbnail"], out thumbNail))
+                if (bool.TryParse(context.Request["thumbnail"], out thumbNail) && thumbNail)
                 {
                     int.TryParse(context.Request["thumbNailSize"], out thumbNailSize);
                     Image thumb = image.GetThumbnailImage(thumbNailSize, thumbNailSize, () => false, IntPtr.Zero);

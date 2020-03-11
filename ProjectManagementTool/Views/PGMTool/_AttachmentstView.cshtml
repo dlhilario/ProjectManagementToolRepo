@@ -1,38 +1,41 @@
-﻿@model ProjectManagementTool.Models.ProjectViewModel
+﻿@model ProjectManagementTool.Models.ProjectModel
 
-<div class="d-table">
-    <div class="d-table-row">
-        <div class="d-table-header"></div>
-        <div class="d-table-header">ID</div>
-        <div class="d-table-header">File Name</div>
-        <div class="d-table-header">Description</div>
-        <div class="d-table-header">Created Date</div>
-        <div class="d-table-header">Remove</div>
-    </div>
+<table class="table ">
+    <thead>
+        <tr class="d-table-row">
+            <th colspan="2">@Html.TextBox("file", "file", new { @type = "file", @class = "form-control", @role = "material" }) </th>
+            <th colspan="3">@Html.EditorFor(model => model.Attachment.Description, "ItemDescription", new { htmlAttributes = new { @class = "form-control", @role = "file", @placeholder = "Description" } }) </th>
+            <th>@Ajax.ActionLink("Add New File", "Attachments", new { }, new AjaxOptions { HttpMethod = "post", InsertionMode = InsertionMode.Replace, OnBegin = "addFile", OnSuccess = "success", OnComplete = "complete", OnFailure = "fail" }, new { @href = "javascript:Void(0);", @class = "btn btn-primary" }) </th>
+        </tr>
+        <tr>
+            <th>File</th>
+            <th>File Name</th>
+            <th>Description</th>
+            <th>Created Date</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
 
-    <div class="d-table-body">
-        <div class="d-table-row">            
-            <div class="d-table-cell d-colspan">@Html.TextBox("file", "file", new {  @type="file", @class = "form-control", @role = "material"  }) </div>
-            <div class="d-table-cell d-colspan">@Html.EditorFor(model => model.ProjectModel.Attachment.Description, "ItemDescription", new { htmlAttributes = new { @class = "form-control", @role = "file" } }) </div>
-            <div class="d-table-cell size-12">@Ajax.ActionLink("Add New File", "Attachments", new { }, new AjaxOptions { HttpMethod = "post", InsertionMode = InsertionMode.Replace, OnBegin = "addFile", OnSuccess = "success", OnComplete = "complete", OnFailure = "fail" }, new { @href = "javascript:Void(0);", @class = "btn btn-primary" }) </div>
-        </div>
-
-        @if (Model.ProjectModel.Attachments != null)
+        @if (Model.Attachments != null)
         {
-            foreach (var attachment in Model.ProjectModel.Attachments)
+            foreach (var attachment in Model.Attachments)
             {
-                <div class="d-table-row">
-                    <div class="d-table-cell"><img src="/PGMTImageHandler.ashx?PictureId=@attachment.ID&thumbnail=true&thumbNailSize=120" width="120" height="120" /></div>
-                    <div class="d-table-cell">@attachment.ID </div>
-                    <div class="d-table-cell">@attachment.FileName </div>
-                    <div class="d-table-cell">@attachment.Description </div>       
-                    <div class="d-table-cell">@attachment.CreatedDate </div>
-                    <div class="d-table-cell">@Ajax.ActionLink("Remove", "RemoveFile", new { id = attachment.ID }, new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "post", OnBegin = "RemoveFile", OnSuccess = "success", OnComplete = "complete", OnFailure = "fail" }, new { @class = "btn btn-danger" }) </div>
-                </div>
+                <tr>
+                    <td>
+                        <a href="/PGMTImageHandler.ashx?PictureId=@attachment.ID&thumbnail=false" data-lightbox="attachments"  data-title="@attachment.Description" >
+                            <img src="/PGMTImageHandler.ashx?PictureId=@attachment.ID&thumbnail=true&thumbNailSize=120" width="120" height="120" class="rounded img-fluid" />
+                        </a>
+                    </td>
+                    <td>@attachment.ID </td>
+                    <td>@attachment.FileName </td>
+                    <td>@attachment.Description </td>
+                    <td>@attachment.CreatedDate </td>
+                    <td>@Ajax.ActionLink("Remove", "RemoveFile", new { id = attachment.ID }, new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "post", OnBegin = "RemoveFile", OnSuccess = "RemoveFileSucces", OnComplete = "complete", OnFailure = "fail" }, new { @class = "btn btn-danger" }) </td>
+                </tr>
             }
         }
+    </tbody>
+</table>
 
-
-    </div>
-</div>
 

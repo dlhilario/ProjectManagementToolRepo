@@ -227,7 +227,7 @@
   <xs:element name="UpdateProjectResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateProjectResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="UpdateProjectResult" nillable="true" type="q16:ProjectResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -254,7 +254,7 @@
   <xs:element name="GetProjectStatusesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetProjectStatusesResult" nillable="true" type="q16:ArrayOfProjectStatus" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetProjectStatusesResult" nillable="true" type="q17:ArrayOfProjectStatus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -269,7 +269,7 @@
   <xs:element name="GetMaterialsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetMaterialsResult" nillable="true" type="q17:ArrayOfMaterialList" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetMaterialsResult" nillable="true" type="q18:ArrayOfMaterialList" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -284,7 +284,7 @@
   <xs:element name="GetCommentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetCommentsResult" nillable="true" type="q18:ArrayOfComments" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetCommentsResult" nillable="true" type="q19:ArrayOfComments" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -299,7 +299,7 @@
   <xs:element name="GetOverViewResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetOverViewResult" nillable="true" type="q19:OverviewDetails" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetOverViewResult" nillable="true" type="q20:OverviewDetails" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -313,7 +313,7 @@
   <xs:element name="GetAttachmentByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetAttachmentByIdResult" nillable="true" type="q20:Attachments" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetAttachmentByIdResult" nillable="true" type="q21:Attachments" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -328,7 +328,7 @@
   <xs:element name="GetAttachmentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetAttachmentsResult" nillable="true" type="q21:ArrayOfAttachments" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="GetAttachmentsResult" nillable="true" type="q22:ArrayOfAttachments" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -336,14 +336,28 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userId" type="xs:int" />
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="attachments" nillable="true" type="q22:Attachments" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="attachments" nillable="true" type="q23:Attachments" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddAttachmentsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="AddAttachmentsResult" nillable="true" type="q23:AttachmentResponse" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/projectManagementToolWebAPI.Model" minOccurs="0" name="AddAttachmentsResult" nillable="true" type="q24:AttachmentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserNameResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

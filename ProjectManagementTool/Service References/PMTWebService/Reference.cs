@@ -1252,7 +1252,10 @@ namespace ProjectManagementTool.PMTWebService {
         private System.Nullable<int> CompanyIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreatedDateField;
+        private double CostEstimateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CreatedDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> EstimatedCompletionDateField;
@@ -1270,7 +1273,7 @@ namespace ProjectManagementTool.PMTWebService {
         private ProjectManagementTool.PMTWebService.MaterialList[] MaterialListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ModifiedDateField;
+        private System.Nullable<System.DateTime> ModifiedDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProjectNameField;
@@ -1378,7 +1381,20 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDate {
+        public double CostEstimate {
+            get {
+                return this.CostEstimateField;
+            }
+            set {
+                if ((this.CostEstimateField.Equals(value) != true)) {
+                    this.CostEstimateField = value;
+                    this.RaisePropertyChanged("CostEstimate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CreatedDate {
             get {
                 return this.CreatedDateField;
             }
@@ -1456,7 +1472,7 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ModifiedDate {
+        public System.Nullable<System.DateTime> ModifiedDate {
             get {
                 return this.ModifiedDateField;
             }
@@ -1618,7 +1634,7 @@ namespace ProjectManagementTool.PMTWebService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreatedDateField;
+        private System.Nullable<System.DateTime> CreatedDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -1639,6 +1655,12 @@ namespace ProjectManagementTool.PMTWebService {
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ModifiedByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ModifiedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> ProjectIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1655,7 +1677,7 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedDate {
+        public System.Nullable<System.DateTime> CreatedDate {
             get {
                 return this.CreatedDateField;
             }
@@ -1746,6 +1768,32 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ModifiedBy {
+            get {
+                return this.ModifiedByField;
+            }
+            set {
+                if ((this.ModifiedByField.Equals(value) != true)) {
+                    this.ModifiedByField = value;
+                    this.RaisePropertyChanged("ModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDate {
+            get {
+                return this.ModifiedDateField;
+            }
+            set {
+                if ((this.ModifiedDateField.Equals(value) != true)) {
+                    this.ModifiedDateField = value;
+                    this.RaisePropertyChanged("ModifiedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> ProjectID {
             get {
                 return this.ProjectIDField;
@@ -1803,7 +1851,7 @@ namespace ProjectManagementTool.PMTWebService {
         private ProjectManagementTool.PMTWebService.Projects ProjectsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime Time_StampField;
+        private System.Nullable<System.DateTime> Time_StampField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> UpdatedByUserIDField;
@@ -1871,7 +1919,7 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Time_Stamp {
+        public System.Nullable<System.DateTime> Time_Stamp {
             get {
                 return this.Time_StampField;
             }
@@ -1931,6 +1979,12 @@ namespace ProjectManagementTool.PMTWebService {
         private System.Nullable<int> ItemQuantityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ModifiedByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ModifiedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1941,6 +1995,9 @@ namespace ProjectManagementTool.PMTWebService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> PurchaseDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double TotalPriceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2018,6 +2075,32 @@ namespace ProjectManagementTool.PMTWebService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ModifiedBy {
+            get {
+                return this.ModifiedByField;
+            }
+            set {
+                if ((this.ModifiedByField.Equals(value) != true)) {
+                    this.ModifiedByField = value;
+                    this.RaisePropertyChanged("ModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> ModifiedDate {
+            get {
+                return this.ModifiedDateField;
+            }
+            set {
+                if ((this.ModifiedDateField.Equals(value) != true)) {
+                    this.ModifiedDateField = value;
+                    this.RaisePropertyChanged("ModifiedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double Price {
             get {
                 return this.PriceField;
@@ -2065,6 +2148,19 @@ namespace ProjectManagementTool.PMTWebService {
                 if ((this.PurchaseDateField.Equals(value) != true)) {
                     this.PurchaseDateField = value;
                     this.RaisePropertyChanged("PurchaseDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double TotalPrice {
+            get {
+                return this.TotalPriceField;
+            }
+            set {
+                if ((this.TotalPriceField.Equals(value) != true)) {
+                    this.TotalPriceField = value;
+                    this.RaisePropertyChanged("TotalPrice");
                 }
             }
         }
@@ -2565,10 +2661,10 @@ namespace ProjectManagementTool.PMTWebService {
         System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.ProjectResponse> AddProjectAsync(int userId, ProjectManagementTool.PMTWebService.Projects project);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/UpdateProject", ReplyAction="http://tempuri.org/IPGMTWebService/UpdateProjectResponse")]
-        string UpdateProject(int userID, ProjectManagementTool.PMTWebService.Projects project);
+        ProjectManagementTool.PMTWebService.ProjectResponse UpdateProject(int userID, ProjectManagementTool.PMTWebService.Projects project);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/UpdateProject", ReplyAction="http://tempuri.org/IPGMTWebService/UpdateProjectResponse")]
-        System.Threading.Tasks.Task<string> UpdateProjectAsync(int userID, ProjectManagementTool.PMTWebService.Projects project);
+        System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.ProjectResponse> UpdateProjectAsync(int userID, ProjectManagementTool.PMTWebService.Projects project);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/DeleteProject", ReplyAction="http://tempuri.org/IPGMTWebService/DeleteProjectResponse")]
         bool DeleteProject(int userID, int projectID);
@@ -2617,6 +2713,12 @@ namespace ProjectManagementTool.PMTWebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/AddAttachments", ReplyAction="http://tempuri.org/IPGMTWebService/AddAttachmentsResponse")]
         System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.AttachmentResponse> AddAttachmentsAsync(int userId, ProjectManagementTool.PMTWebService.Attachments attachments);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetUserName", ReplyAction="http://tempuri.org/IPGMTWebService/GetUserNameResponse")]
+        string GetUserName(int userId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPGMTWebService/GetUserName", ReplyAction="http://tempuri.org/IPGMTWebService/GetUserNameResponse")]
+        System.Threading.Tasks.Task<string> GetUserNameAsync(int userId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2766,11 +2868,11 @@ namespace ProjectManagementTool.PMTWebService {
             return base.Channel.AddProjectAsync(userId, project);
         }
         
-        public string UpdateProject(int userID, ProjectManagementTool.PMTWebService.Projects project) {
+        public ProjectManagementTool.PMTWebService.ProjectResponse UpdateProject(int userID, ProjectManagementTool.PMTWebService.Projects project) {
             return base.Channel.UpdateProject(userID, project);
         }
         
-        public System.Threading.Tasks.Task<string> UpdateProjectAsync(int userID, ProjectManagementTool.PMTWebService.Projects project) {
+        public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.ProjectResponse> UpdateProjectAsync(int userID, ProjectManagementTool.PMTWebService.Projects project) {
             return base.Channel.UpdateProjectAsync(userID, project);
         }
         
@@ -2836,6 +2938,14 @@ namespace ProjectManagementTool.PMTWebService {
         
         public System.Threading.Tasks.Task<ProjectManagementTool.PMTWebService.AttachmentResponse> AddAttachmentsAsync(int userId, ProjectManagementTool.PMTWebService.Attachments attachments) {
             return base.Channel.AddAttachmentsAsync(userId, attachments);
+        }
+        
+        public string GetUserName(int userId) {
+            return base.Channel.GetUserName(userId);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetUserNameAsync(int userId) {
+            return base.Channel.GetUserNameAsync(userId);
         }
     }
 }

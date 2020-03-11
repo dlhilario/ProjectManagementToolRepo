@@ -10,7 +10,7 @@ namespace ProjectManagementTool.Models
 
     public class ApplicationUser : IdentityUser
     {
-        public int ID { get; set; }
+        //public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public override string UserName { get; set; }

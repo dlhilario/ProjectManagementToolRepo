@@ -5,7 +5,7 @@ var app = (function () {
     })
 
     function init() {
-        manageUser();
+        manageUser(); 
     }
 
     var manageUser = function () {
@@ -153,6 +153,7 @@ var app = (function () {
 
         });
     }
+
     var service = {
         CreateUser: CreateUser
     }

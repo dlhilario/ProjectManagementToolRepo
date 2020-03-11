@@ -1,0 +1,61 @@
+﻿@model ProjectManagementTool.Models.ProjectModel
+<div class="form-row">
+    <div class="form-group col-md-4">
+        @Html.Hidden("CompanyId", Request["cmp"])
+        @Html.LabelFor(model => model.Project.ProjectName, "Project Name", htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Project.ProjectName, new { htmlAttributes = new { @class = "form-control", @disabled="disabled" } })
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.Project.StartDate, "Start Date", htmlAttributes: new { @class = "control-label date col-md-12" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Project.StartDate, new { htmlAttributes = new { @class = "form-control date datepicker", @data_Provider = "datepicker" } })
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.Project.EstimatedCompletionDate, "Estimated Completion Date", htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Project.EstimatedCompletionDate, new { htmlAttributes = new { @class = "form-control date datepicker", @data_Provider = "datepicker" } })
+        </div>
+    </div>
+
+
+</div>
+
+<div class="form-row">
+
+    <div class="form-group  col-md-4">
+        @Html.LabelFor(model => model.Project.Status, htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Project.Status, Model.SelectListForProjectStatus(), new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.Project.CostEstimate, "Cost Estimate", htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Project.CostEstimate, new { htmlAttributes = new { @class = "form-control", @data_type = "currency" } })
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        @Html.LabelFor(model => model.Project.CompanyID, htmlAttributes: new { @class = "control-label col-md-12" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Project.CompanyID, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+        </div>
+    </div>
+
+</div>
+<div class="form-row">
+
+    <div class="form-group col-12">
+        @Html.LabelFor(model => model.Project.ProjectScope, "Project Scope", htmlAttributes: new { @class = "control-label col-12" })
+        <div class="col-12">
+            @Html.TextAreaFor(model => model.Project.ProjectScope, new { @class = "form-control col-md-12" })
+        </div>
+    </div>
+
+</div>

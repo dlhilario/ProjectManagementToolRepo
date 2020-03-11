@@ -1,4 +1,4 @@
-﻿@model ProjectManagementTool.Models.ProjectViewModel
+﻿@model ProjectManagementTool.Models.ProjectModel
 
 <div class="d-table">
     <div class="d-table-row">
@@ -7,26 +7,28 @@
         <div class="d-table-header">Item Desc</div>
         <div class="d-table-header">Item Qty</div>
         <div class="d-table-header">Item Price</div>
+        <div class="d-table-header">Total Price</div>
         <div class="d-table-header">Date Purshased</div>
         <div class="d-table-header">Invoice Number</div>
         <div class="d-table-header">Remove</div>
     </div>
 
     <div class="d-table-body">
-        <div class="d-table-row">
-            <div class="d-table-cell ">@Html.EditorFor(model => model.ProjectModel.Material.ID, "ID", new { htmlAttributes = new { @class = "form-control", @disabled="disabled", @role = "material" } }) </div>
-            <div class="d-table-cell ">@Html.EditorFor(model => model.ProjectModel.Material.ItemName, "ItemName", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
-            <div class="d-table-cell ">@Html.EditorFor(model => model.ProjectModel.Material.ItemDescription, "ItemDescription", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
-            <div class="d-table-cell ">@Html.EditorFor(model => model.ProjectModel.Material.ItemQuantity, "ItemQuantity", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
-            <div class="d-table-cell ">@Html.EditorFor(model => model.ProjectModel.Material.Price, "Price", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
-            <div class="d-table-cell ">@Html.EditorFor(model => model.ProjectModel.Material.PurchaseDate, "PurchaseDate", new { htmlAttributes = new { @class = "form-control datepicker_material_list", @role = "material" } }) </div>
-            <div class="d-table-cell ">@Html.EditorFor(model => model.ProjectModel.Material.InvoiceNumber, "InvoiceNumber", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
+        <div class="d-table-row"> 
+            <div class="d-table-cell ">@Html.EditorFor(model => model.Material.ID, "ID", new { htmlAttributes = new { @class = "form-control", @disabled="disabled", @role = "material" } }) </div>
+            <div class="d-table-cell ">@Html.EditorFor(model => model.Material.ItemName, "ItemName", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
+            <div class="d-table-cell ">@Html.EditorFor(model => model.Material.ItemDescription, "ItemDescription", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
+            <div class="d-table-cell ">@Html.EditorFor(model => model.Material.ItemQuantity, "ItemQuantity", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
+            <div class="d-table-cell ">@Html.EditorFor(model => model.Material.Price, "Price", new { htmlAttributes = new { @class = "form-control", @role = "material",  @data_Type="currency" } }) </div>
+            <div class="d-table-cell ">@Html.EditorFor(model => model.Material.TotalPrice, "Total Price", new { htmlAttributes = new { @class = "form-control", @role = "material", @disabled="disabled", @data_Type = "currency" } }) </div>
+            <div class="d-table-cell ">@Html.EditorFor(model => model.Material.PurchaseDate, "PurchaseDate", new { htmlAttributes = new { @class = "form-control datepicker_material_list", @role = "material" } }) </div>
+            <div class="d-table-cell ">@Html.EditorFor(model => model.Material.InvoiceNumber, "InvoiceNumber", new { htmlAttributes = new { @class = "form-control", @role = "material" } }) </div>
             <div class="d-table-cell size-12">@Ajax.ActionLink("Add New Material", "MaterialList",new  { }, new AjaxOptions { HttpMethod = "post" , InsertionMode = InsertionMode.Replace, OnBegin = "addNewMaterial", OnSuccess = "success", OnComplete="complete", OnFailure="fail" },new { @href="javascript:Void(0);", @class="btn btn-primary" }) </div>
         </div>
 
-        @if (Model.ProjectModel.MaterialList != null)
+        @if (Model.MaterialList != null)
         {
-            foreach (var mList in Model.ProjectModel.MaterialList)
+            foreach (var mList in Model.MaterialList)
             {
                 <div class="d-table-row">
                     <div class="d-table-cell">@mList.ID </div>
@@ -34,6 +36,7 @@
                     <div class="d-table-cell">@mList.ItemDescription </div>
                     <div class="d-table-cell">@mList.ItemQuantity </div>
                     <div class="d-table-cell">$ @mList.Price </div>
+                    <div class="d-table-cell">$ @mList.TotalPrice </div>
                     <div class="d-table-cell">@mList.PurchaseDate </div>
                     <div class="d-table-cell">@mList.InvoiceNumber </div>
                     <div class="d-table-cell">@Ajax.ActionLink("Remove", "RemoveMaterial",new  { id= mList.ID}, new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "post", OnBegin = "RemoveMaterial", OnSuccess = "success", OnComplete="complete", OnFailure="fail" }, new { @class = "btn btn-danger" }) </div>

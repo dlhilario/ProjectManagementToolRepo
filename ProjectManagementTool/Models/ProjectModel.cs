@@ -14,6 +14,7 @@ namespace ProjectManagementTool.Models
     [Serializable]
     public class ProjectModel : BaseProject
     {
+
         private List<MaterialList> _MaterialList;
         private List<Attachments> _Attachment;
 
@@ -64,9 +65,13 @@ namespace ProjectManagementTool.Models
         }
 
         public Comments Comments { get; set; }
-               
+
         public List<Projects> Projects { get; set; }
 
+        public List<Companies> Companies
+        {
+            get; set;
+        }
 
         public async Task<List<ProjectStatus>> ProjectStatusAsync()
         {
@@ -100,6 +105,17 @@ namespace ProjectManagementTool.Models
             SelectList selectList = new SelectList(SelectProjectStatusListItem(), "Value", "Text");
             return selectList;
         }
+
+        public string GetUserName(int? userID)
+        {
+            HttpRequestBase request = new HttpRequestWrapper(HttpContext.Current.Request);
+
+            ProjectDetailsModel pm = new ProjectDetailsModel(request);
+            return pm.GetUserNameById(userID);
+        }
+
+        public OverviewDetails OverviewDetails { get; set; }
+       
 
     }
 

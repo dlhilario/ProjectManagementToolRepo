@@ -1,0 +1,38 @@
+﻿@model ProjectManagementTool.Models.ProjectModel
+
+<table class="table">
+    <thead>
+        <tr class="d-table-row">
+            <th class="d-table-header">Id</th>
+            <th class="d-table-header">Item Name</th>
+            <th class="d-table-header">Item Desc</th>
+            <th class="d-table-header">Item Qty</th>
+            <th class="d-table-header">Item Price</th>
+            <th class="d-table-header">Total Price</th>
+            <th class="d-table-header">Date Purshased</th>
+            <th class="d-table-header">Invoice Number</th>
+        </tr>
+    </thead>
+    <tbody class="d-table-body">
+
+
+        @if (Model.Project!=null && Model.ProjectModel.Project.MaterialList != null)
+        {
+            foreach (var mList in Model.Project.MaterialList)
+            {
+                <tr>
+                    <td>@mList.ID </td>
+                    <td>@mList.ItemName </td>
+                    <td>@mList.ItemDescription </td>
+                    <td>@mList.ItemQuantity </td>
+                    <td>$ @mList.Price </td>
+                    <td>$ @mList.TotalPrice </td>
+                    <td>@mList.PurchaseDate </td>
+                    <td>@mList.InvoiceNumber </td>
+                </tr>
+            }
+        }
+
+
+    </tbody>
+</table>

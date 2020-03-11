@@ -1,0 +1,36 @@
+﻿@model ProjectManagementTool.Models.ProjectModel
+@*@if (Model.ProjectModel.Project != null && Model.ProjectModel.Project.CommentList.Length > 0)
+    {
+        foreach (var comment in Model.ProjectModel.Project.CommentList)
+        {
+            <p>@comment.Time_Stamp (@Model.ProjectModel.GetUserName((int)@comment.UpdatedByUserID)): <blockquote>@comment.Comment</blockquote></p>
+                <hr class="fa-flip-horizontal" />
+        }
+    }*@
+@if (ViewBag.Editproject != null && ViewBag.Editproject == true)
+{
+    <div class="card col-12">
+        <h4 class="card-header">Comment</h4>
+        <div class="card-body">
+
+            @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+            @Html.TextAreaFor(model => model.Comments.Comment, new { @class = "form-control col-md-12" })
+
+        </div>
+    </div>
+}
+else
+{
+    <div class="card col-12">
+        <h4 class="card-header">Comments History</h4>
+        <div class="card-body">
+            @if (Model.Comments != null)
+            {
+                MvcHtmlString.Create(@Model.Comments.Comment);
+            }
+
+        </div>
+    </div>
+}
+
+

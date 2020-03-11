@@ -1,0 +1,201 @@
+﻿@model ProjectManagementTool.Models.ProjectModel
+@{
+    bool EditProject = false;
+    if (bool.TryParse(Request["EditProject"], out EditProject) && EditProject)
+    {
+        ViewBag.Title = "Edit Project";
+        ViewBag.Editproject = true;
+    }
+    else
+    {
+        ViewBag.Title = "Project Details";
+        ViewBag.Editproject = false;
+    }
+
+    Layout = "~/Views/Shared/_PMGTFrameLayout.cshtml";
+}
+
+<section class="container-fluid">
+
+    @using (Html.BeginForm("ProjectUpdate", "PGMTool", new { form = this, cmp = Request["cmp"], PrjID = Request["PrjID"] }, FormMethod.Post, new { @class = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row justify-content-between sticky-top menu" style="opacity:.9; padding-top:5px; padding-bottom:5px">
+            <div class="col-8"><h2>@ViewBag.Title</h2></div>
+            @if (EditProject == true)
+            {
+                <div class="col-4 btn-group">
+                   
+                    <input type="submit" value="Save" class="btn btn-primary  pull-left " />
+                    @Html.ActionLink("Cancel", "CancelEditProject", new { cmp = Request["cmp"], PrjId = Request["PrjId"] }, new { @class = "btn btn-primary pull-left" })
+                </div>
+            }
+            else
+            {
+                <div class="col-4 btn-group btn-group-lg">
+                    @Html.ActionLink("Close", "CancelEditProject", new { cmp = Request["cmp"], prjid = Request["PrjId"] }, new { @class = "btn btn-primary pull-left" })
+                    @Html.ActionLink("Print", "PrintProject", new { cmp = Request["cmp"], prjid = Request["PrjId"] }, new { @class = "btn btn-primary pull-left", })
+                    @Html.ActionLink("Edit", "EditProject", new { cmp = Request["cmp"], prjid = Request["PrjId"], EditPrj = true }, new { @class = "btn btn-primary pull-left" })
+                </div>
+
+            }
+        </div>
+
+        <div class="form">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="card">
+                <a href="#projectDetails" data-toggle="collapse" role="button" class="card-header">Project Details</a>
+                <div class="card-body collapse show" data-collapsed="false" id="projectDetails">
+                    @{Html.RenderPartial("_DetailProjectView", Model);}
+                </div>
+            </div>
+
+            <hr />
+            <section id="project_tabs">
+
+                <ul class="nav nav-pills" id="v-pills-tab">
+                    <li>
+                        <a class="nav-link active" id="v-pills-comments-tab" data-toggle="pill" href="#v-pills-comments" role="tab" aria-controls="v-pills-comments" aria-selected="true">Comments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Property</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" id="v-pills-material-list-tab" data-toggle="pill" href="#v-pills-material-list" role="tab" aria-controls="v-pills-material-list" aria-selected="false">Material List</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" id="v-pills-attachments-tab" data-toggle="pill" href="#v-pills-attachments" role="tab" aria-controls="v-pills-attachments" aria-selected="false">Attachments</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" id="v-pills-all-tab" data-toggle="pill" aria-controls="v-pills-all" role="tab" aria-selected="false" href="#">All</a>
+                    </li>
+                </ul>
+                <div class="tab-content clearfix" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active in" id="v-pills-comments" role="tabpanel" aria-labelledby="v-pills-comments-tab">
+                        <div class="container-fluid">
+                            <div class="row">
+                                @{Html.RenderPartial("_DetailCommentView", Model);}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="card col-12">
+                                    <h4 class="card-header">Property Address</h4>
+                                    <div class="card-body">
+                                        @{Html.RenderPartial("_DetailPropertyView", Model);}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-material-list" role="tabpanel" aria-labelledby="v-pills-material-list-tab">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="card">
+                                    <h4 class="card-header">
+                                        Material List
+
+                                    </h4>
+                                    <div class="card-body material_list" id="material_list">
+
+                                        @{Html.RenderPartial("_MaterialListView", Model);}
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-attachments" role="tabpanel" aria-labelledby="v-pills-attachments-tab">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="card col-lg-12">
+                                    <h4 class="card-header">
+                                        Attachments
+                                    </h4>
+                                    <div class="card-body attachments overflow-auto" id="attachments">
+
+                                        @{Html.RenderPartial("_AttachmentstView", Model);}
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+                                            }
+
+</section>
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $('#v-pills-all-tab').on('click', function () {
+             ShowAllTab();
+        });
+
+        $("#project_tabs").find("a[id^=v-pills]").not("a[id^=v-pills-all]").each(function () {
+            $(this).on("click", function (evt) {
+                evt.preventDefault();
+                var a = $(this);
+                ResetTabView();
+            })
+        })
+
+        function ResetTabView() {
+            $('#project_tabs').find('.tab-pane').removeAttr('style').removeClass("active in");
+        }
+
+        function ShowAllTab() {          
+            $('#v-pills-all-tab').parent().addClass('active');
+            $('#project_tabs').find('.tab-pane').addClass('active in').css({ "display":"initial"});
+            $('#project_tabs').find('[data-toggle="pill"]').parent().removeClass('active');
+        }
+
+        function ProjectPrint() {
+            
+           
+            $("#v-pills-all-tab").trigger("click", function () {
+                ShowAllTab()
+                setTimeout(function () {
+                    $(".form").printThis({
+                        debug: true,
+                        inportCSS: false,
+                        printContainer: true,
+                        importStyle: false,
+                        removeIline: false,
+                        formValues: true
+                    });
+                }, 1000);
+            });
+            
+            ResetTabView();
+        }
+        var editForm = "@Request["EditProject"]";
+        if (editForm) {
+            $(".form").find("input, select, textarea").each(function (evt, input) {
+                //  console.log(input)
+                $(input).not("#ProjectModel_Project_ProjectName, #ProjectModel_Project_CompanyID").removeAttr("disabled");
+            });
+
+        } else {
+            $(".form").find("input, select, textarea").each(function (evt, input) {
+                //  console.log(input)
+                $(input).attr("disabled", "disabled");
+            });
+        }
+
+
+    </script>
+}

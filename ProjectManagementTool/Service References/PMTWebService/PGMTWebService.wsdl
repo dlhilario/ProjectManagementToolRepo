@@ -151,6 +151,12 @@
   <wsdl:message name="IPGMTWebService_AddAttachments_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAttachmentsResponse" />
   </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserName" />
+  </wsdl:message>
+  <wsdl:message name="IPGMTWebService_GetUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="IPGMTWebService">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/Login" message="tns:IPGMTWebService_Login_InputMessage" />
@@ -247,6 +253,10 @@
     <wsdl:operation name="AddAttachments">
       <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/AddAttachments" message="tns:IPGMTWebService_AddAttachments_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/AddAttachmentsResponse" message="tns:IPGMTWebService_AddAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPGMTWebService/GetUserName" message="tns:IPGMTWebService_GetUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPGMTWebService/GetUserNameResponse" message="tns:IPGMTWebService_GetUserName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPGMTWebService" type="tns:IPGMTWebService">
@@ -460,6 +470,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddAttachments">
       <soap:operation soapAction="http://tempuri.org/IPGMTWebService/AddAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <soap:operation soapAction="http://tempuri.org/IPGMTWebService/GetUserName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -13,9 +13,11 @@ namespace ProjectManagementTool
                         "~/Scripts/jquery.mobile-1.5.4-alpah.1.min.js",
                         "~/Scripts/jquery.unobtrusive-ajax.min.js",
                         "~/Scripts/jquery.validate.min.js",
-                        //"~/Scripts/jquery.validate.unobtrusive.min.js",
+                        "~/Scripts/jquery.validate.unobtrusive.min.js",
                         "~/Scripts/additional-methods.min.js",
                         "~/Scripts/moment.min.js",
+                        "~/Scripts/Currency.js",
+                        "~/Scripts/printThis.js",
                         "~/js/app.js"
                         ));
 
@@ -43,9 +45,9 @@ namespace ProjectManagementTool
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/popper-min.js",
                       "~/Scripts/bootstrap.min.js",
-                      "~/Scripts/bootstrap-datepicker.min.js"
+                      "~/Scripts/bootstrap-datepicker.min.js",
+                      "~/Scripts/popper-min.js"
                       ));
 
 
@@ -65,11 +67,19 @@ namespace ProjectManagementTool
                       "~/js/pieChart.js"
                      ));
 
+            bundles.Add(new ScriptBundle("~/js/lightbox").Include(
+                      "~/Scripts/ekko-lightbox.min.js",
+                      "~/Scripts/lightbox.js"
+                    ));
+
+            bundles.Add(new StyleBundle("~/content/lightboxcss").Include(
+                      "~/Content/ekko-lightbox.min.css",
+                      "~/Content/lightbox.css"
+                   ));
 
             bundles.Add(new StyleBundle("~/content/layout").Include(
                     "~/Content/layout-default-latest.css"
                 ));
-
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -77,7 +87,7 @@ namespace ProjectManagementTool
                       "~/Content/jquery.mobile-1.4.5.min.css",
                       "~/Content/jquery.mobile.theme-1.4.5.min.css",
                       "~/Content/DataTables/css/jquery.dataTables.min.css",
-                      "~/Content/font-awesome.css",
+                      "~/css/font-awesome.min.css",
                       "~/Content/bootstrap.min.css",
                       "~/Content/bootstrap-reboot.css",
                       "~/Content/bootstrap-datepicker.min.css",
